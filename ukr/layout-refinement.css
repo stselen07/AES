@@ -1,0 +1,172 @@
+/* =========================================================
+   AES — FINAL LAYOUT RHYTHM
+   Shared spacing rules for the Ukrainian page.
+========================================================= */
+
+:root {
+    --site-width: 1400px;
+    --site-gutter: 48px;
+    --section-space: clamp(88px, 9vw, 136px);
+    --heading-space: clamp(44px, 5vw, 72px);
+    --content-space: clamp(28px, 3vw, 48px);
+}
+
+.container,
+.applications-inner {
+    width: min(var(--site-width), calc(100% - (var(--site-gutter) * 2)));
+}
+
+.section {
+    padding-block: var(--section-space);
+}
+
+.section-heading,
+.technology-header,
+.energy-potential-header,
+.applications-header {
+    margin-bottom: var(--heading-space);
+}
+
+.section-heading .eyebrow,
+.technology-header .section-label,
+.energy-potential-header .section-label,
+.applications-header .eyebrow {
+    margin-bottom: 20px;
+}
+
+.section-text {
+    margin-top: 26px;
+}
+
+/* The custom sections previously used unrelated 58–70px paddings. */
+.energy-potential,
+.turnkey,
+.why-aes,
+.applications {
+    padding-block: var(--section-space);
+}
+
+.turnkey-heading,
+.why-aes .section-heading {
+    margin-bottom: var(--heading-space);
+}
+
+/* Keep content groups visually separated without creating empty bands. */
+.solution-grid,
+.energy-options,
+.technology-interface,
+.technology-grid,
+.turnkey-timeline,
+.advantage-system,
+.project-grid,
+.applications-track,
+.about-content,
+.contact-footer-info {
+    margin-top: 0;
+}
+
+.project-grid {
+    gap: 16px;
+    background: transparent;
+}
+
+.project-card,
+.project-content {
+    min-height: 400px;
+}
+
+.section-action {
+    margin-top: var(--content-space);
+}
+
+.applications-header {
+    max-width: 840px;
+}
+
+.applications-track {
+    min-height: 168px;
+}
+
+.application-item {
+    min-height: 168px;
+    padding: 30px 22px;
+}
+
+.about-content {
+    max-width: 900px;
+}
+
+.contact-footer-top {
+    gap: clamp(36px, 7vw, 110px);
+}
+
+.contact-footer-info {
+    row-gap: 32px;
+}
+
+.contact-footer-bottom {
+    margin-top: clamp(64px, 8vw, 112px);
+    padding-top: 30px;
+}
+
+@media (max-width: 1100px) {
+    :root {
+        --site-gutter: 36px;
+        --section-space: clamp(76px, 10vw, 104px);
+    }
+
+    .project-card,
+    .project-content {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 700px) {
+    :root {
+        --site-gutter: 20px;
+        --section-space: 72px;
+        --heading-space: 38px;
+        --content-space: 28px;
+    }
+
+    .section-heading .eyebrow,
+    .technology-header .section-label,
+    .energy-potential-header .section-label,
+    .applications-header .eyebrow {
+        margin-bottom: 16px;
+    }
+
+    .section-text {
+        margin-top: 22px;
+    }
+
+    .project-grid {
+        gap: 12px;
+    }
+
+    .project-card,
+    .project-content {
+        min-height: 340px;
+    }
+
+    .application-item {
+        min-height: 136px;
+        padding: 24px 16px;
+    }
+
+    .contact-footer-top,
+    .contact-footer-info {
+        gap: 32px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
