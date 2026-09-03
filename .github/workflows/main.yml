@@ -22,7 +22,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+         protocol: ftps
+         security: loose
           port: 21
           server-dir: AES_ukr_clean_2_3/
           exclude: |
