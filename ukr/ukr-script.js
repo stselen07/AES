@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================================================
-       INSTANT SECTION NAVIGATION
+       SECTION NAVIGATION
     ========================================================= */
 
     const internalLinks = document.querySelectorAll('a[href^="#"]');
@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         link.addEventListener("click", function (event) {
 
             const hash = link.getAttribute("href");
+
             if (!hash || hash === "#") return;
 
             const target = document.querySelector(hash);
@@ -30,10 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
-    /* =========================================================
-       OPEN SECTION FROM URL
-    ========================================================= */
 
     const initialHash = window.location.hash;
 
@@ -61,7 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
        HERO SLIDESHOW
     ========================================================= */
 
-    const heroSlides = document.querySelectorAll(".hero-slide");
+    const heroSlides =
+        document.querySelectorAll(".hero-slide");
 
     const heroImages = [
         "../images/gas-turbine-siemens-III.jpg",
@@ -69,29 +67,29 @@ document.addEventListener("DOMContentLoaded", function () {
         "../images/heroFoto-3.jpg"
     ];
 
-
     heroSlides.forEach(function (slide, index) {
 
         if (heroImages[index]) {
+
             slide.style.backgroundImage =
-                `url("${heroImages[index]}")`;
+                'url("' + heroImages[index] + '")';
+
         }
 
     });
 
-
-    if (heroSlides.length > 0) {
+    if (heroSlides.length) {
 
         let currentSlide = 0;
 
         heroSlides[0].classList.add("active");
 
-
         if (heroSlides.length > 1) {
 
             setInterval(function () {
 
-                heroSlides[currentSlide].classList.remove("active");
+                heroSlides[currentSlide]
+                    .classList.remove("active");
 
                 currentSlide++;
 
@@ -99,7 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     currentSlide = 0;
                 }
 
-                heroSlides[currentSlide].classList.add("active");
+                heroSlides[currentSlide]
+                    .classList.add("active");
 
             }, 8000);
 
@@ -112,46 +111,55 @@ document.addEventListener("DOMContentLoaded", function () {
        ENERGY POTENTIAL — OPEN / CLOSE
     ========================================================= */
 
-    const calculatorButtons = document.querySelectorAll(
-        "[data-open-calculator]"
-    );
+    const calculatorButtons =
+        document.querySelectorAll(
+            "[data-open-calculator]"
+        );
 
-    const calculatorArea = document.querySelector(
-        "#energy-calculator"
-    );
+    const calculatorArea =
+        document.querySelector(
+            "#energy-calculator"
+        );
 
-    const calculatorPanels = document.querySelectorAll(
-        "[data-calculator-panel]"
-    );
+    const calculatorPanels =
+        document.querySelectorAll(
+            "[data-calculator-panel]"
+        );
 
-    const closeCalculatorButtons = document.querySelectorAll(
-        ".calculator-close"
-    );
+    const closeCalculatorButtons =
+        document.querySelectorAll(
+            ".calculator-close"
+        );
 
 
     calculatorButtons.forEach(function (button) {
 
         button.addEventListener("click", function () {
 
-            const calculatorName =
-                button.dataset.openCalculator;
-
             if (!calculatorArea) return;
 
+            const calculatorName =
+                button.getAttribute(
+                    "data-open-calculator"
+                );
 
             calculatorPanels.forEach(function (panel) {
+
                 panel.classList.remove("is-active");
+
             });
 
-
-            const targetPanel = document.querySelector(
-                `[data-calculator-panel="${calculatorName}"]`
-            );
+            const targetPanel =
+                document.querySelector(
+                    '[data-calculator-panel="' +
+                    calculatorName +
+                    '"]'
+                );
 
             if (!targetPanel) return;
 
-
             targetPanel.classList.add("is-active");
+
             calculatorArea.classList.add("is-visible");
 
         });
@@ -165,10 +173,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (!calculatorArea) return;
 
-            calculatorArea.classList.remove("is-visible");
+            calculatorArea.classList.remove(
+                "is-visible"
+            );
 
             calculatorPanels.forEach(function (panel) {
+
                 panel.classList.remove("is-active");
+
             });
 
         });
@@ -185,32 +197,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (calculatePowerButton) {
 
-        calculatePowerButton.addEventListener("click", function () {
+        calculatePowerButton.addEventListener(
+            "click",
+            function () {
 
-            const power = parseFloat(
-                document.querySelector("#powerInput").value
-            );
+                const powerInput =
+                    document.querySelector("#powerInput");
 
-            const hours = parseFloat(
-                document.querySelector("#powerHours").value
-            );
+                const hoursInput =
+                    document.querySelector("#powerHours");
 
-            if (
-                isNaN(power) ||
-                isNaN(hours) ||
-                power <= 0 ||
-                hours <= 0
-            ) {
-                return;
+                const result =
+                    document.querySelector("#powerResult");
+
+                if (!powerInput || !hoursInput || !result) {
+                    return;
+                }
+
+                const power =
+                    parseFloat(powerInput.value);
+
+                const hours =
+                    parseFloat(hoursInput.value);
+
+                if (
+                    isNaN(power) ||
+                    isNaN(hours) ||
+                    power <= 0 ||
+                    hours <= 0
+                ) {
+                    return;
+                }
+
+                const annualGeneration =
+                    (power * hours) / 1000;
+
+                result.textContent =
+                    annualGeneration.toFixed(1);
+
             }
-
-            const annualGeneration =
-                (power * hours) / 1000;
-
-            document.querySelector("#powerResult").textContent =
-                annualGeneration.toFixed(1);
-
-        });
+        );
 
     }
 
@@ -224,32 +250,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (calculateCHPButton) {
 
-        calculateCHPButton.addEventListener("click", function () {
+        calculateCHPButton.addEventListener(
+            "click",
+            function () {
 
-            const power = parseFloat(
-                document.querySelector("#chpPower").value
-            );
+                const powerInput =
+                    document.querySelector("#chpPower");
 
-            const hours = parseFloat(
-                document.querySelector("#chpHours").value
-            );
+                const hoursInput =
+                    document.querySelector("#chpHours");
 
-            if (
-                isNaN(power) ||
-                isNaN(hours) ||
-                power <= 0 ||
-                hours <= 0
-            ) {
-                return;
+                const result =
+                    document.querySelector("#chpResult");
+
+                if (!powerInput || !hoursInput || !result) {
+                    return;
+                }
+
+                const power =
+                    parseFloat(powerInput.value);
+
+                const hours =
+                    parseFloat(hoursInput.value);
+
+                if (
+                    isNaN(power) ||
+                    isNaN(hours) ||
+                    power <= 0 ||
+                    hours <= 0
+                ) {
+                    return;
+                }
+
+                const annualGeneration =
+                    (power * hours) / 1000;
+
+                result.textContent =
+                    annualGeneration.toFixed(1);
+
             }
-
-            const annualGeneration =
-                (power * hours) / 1000;
-
-            document.querySelector("#chpResult").textContent =
-                annualGeneration.toFixed(1);
-
-        });
+        );
 
     }
 
@@ -263,713 +303,889 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (flareAssessmentButton) {
 
-        flareAssessmentButton.addEventListener("click", function () {
+        flareAssessmentButton.addEventListener(
+            "click",
+            function () {
 
-            const flareFlow =
-                document.querySelector("#flareFlow").value;
+                const flareFlow =
+                    document.querySelector("#flareFlow");
 
-            const flareComposition =
-                document.querySelector("#flareComposition").value;
+                const flareComposition =
+                    document.querySelector(
+                        "#flareComposition"
+                    );
 
-            const flareMessage =
-                document.querySelector("#flareMessage");
+                const flareMessage =
+                    document.querySelector(
+                        "#flareMessage"
+                    );
 
-            if (
-                flareFlow === "" ||
-                flareComposition === ""
-            ) {
+                if (
+                    !flareFlow ||
+                    !flareComposition ||
+                    !flareMessage
+                ) {
+                    return;
+                }
 
-                flareMessage.classList.remove("is-visible");
+                if (
+                    flareFlow.value === "" ||
+                    flareComposition.value === ""
+                ) {
 
-                alert(
-                    "Please provide the gas flow and gas type."
+                    flareMessage.classList.remove(
+                        "is-visible"
+                    );
+
+                    alert(
+                        "Будь ласка, вкажіть обсяг газу та його тип."
+                    );
+
+                    return;
+
+                }
+
+                flareMessage.classList.add(
+                    "is-visible"
                 );
 
-                return;
+                flareMessage.scrollIntoView({
+                    behavior: "auto",
+                    block: "nearest"
+                });
+
             }
-
-            flareMessage.classList.add("is-visible");
-
-            flareMessage.scrollIntoView({
-                behavior: "auto",
-                block: "nearest"
-            });
-
-        });
+        );
 
     }
 
 
     /* =========================================================
-       GAS APPLICATIONS — INTERACTIVE TYPES
+       GAS APPLICATIONS
     ========================================================= */
 
-    const gasTypes = document.querySelectorAll(".gas-type");
-    const selectedGas = document.querySelector("#selectedGas");
+    const gasTypes =
+        document.querySelectorAll(".gas-type");
+
+    const selectedGas =
+        document.querySelector("#selectedGas");
 
     gasTypes.forEach(function (gasType) {
 
-        gasType.addEventListener("click", function () {
+        gasType.addEventListener(
+            "click",
+            function () {
 
-            gasTypes.forEach(function (item) {
-                item.classList.remove("active");
-            });
+                gasTypes.forEach(function (item) {
 
-            gasType.classList.add("active");
+                    item.classList.remove("active");
 
-            const gasName = gasType.dataset.gas;
+                });
 
-            if (selectedGas) {
-                selectedGas.textContent = gasName;
+                gasType.classList.add("active");
+
+                if (selectedGas) {
+
+                    selectedGas.textContent =
+                        gasType.getAttribute("data-gas");
+
+                }
+
             }
-
-        });
+        );
 
     });
+
+
     /* =========================================================
-   FLARE GAS CALCULATOR — FINAL
-   ========================================================= */
+       FLARE GAS CALCULATOR
+    ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+    const flareCalculator =
+        document.querySelector(
+            '[data-calculator="flare"]'
+        );
 
-    const flareCalculator = document.querySelector(
-        '[data-calculator="flare"]'
-    );
+    if (flareCalculator) {
 
-    if (!flareCalculator) return;
+        const gasFlowInput =
+            flareCalculator.querySelector(
+                'input[name="gas-flow"], #gasFlow'
+            );
 
+        const gasTypeSelect =
+            flareCalculator.querySelector(
+                'select[name="gas-type"], #gasType'
+            );
 
-    /* =====================================================
-       INPUTS
-       ===================================================== */
+        const operatingHoursInput =
+            flareCalculator.querySelector(
+                'input[name="operating-hours"], #operatingHours'
+            );
 
-    const gasFlowInput = flareCalculator.querySelector(
-        'input[name="gas-flow"], #gasFlow'
-    );
+        const resultBox =
+            flareCalculator.querySelector(
+                ".flare-result"
+            );
 
-    const gasTypeSelect = flareCalculator.querySelector(
-        'select[name="gas-type"], #gasType'
-    );
+        const resultPower =
+            flareCalculator.querySelector(
+                ".flare-result-power b"
+            );
 
-    const operatingHoursInput = flareCalculator.querySelector(
-        'input[name="operating-hours"], #operatingHours'
-    );
+        const resultConfiguration =
+            flareCalculator.querySelector(
+                ".flare-result-main > strong"
+            );
 
+        const resultOutput =
+            flareCalculator.querySelector(
+                ".flare-result-stats div:nth-child(1) strong"
+            );
 
-    /* =====================================================
-       OUTPUTS
-       ===================================================== */
+        const resultHeat =
+            flareCalculator.querySelector(
+                ".flare-result-stats div:nth-child(2) strong"
+            );
 
-    const resultBox = flareCalculator.querySelector(
-        ".flare-result"
-    );
-
-    const resultPower = flareCalculator.querySelector(
-        ".flare-result-power b"
-    );
-
-    const resultConfiguration = flareCalculator.querySelector(
-        ".flare-result-main > strong"
-    );
-
-    const resultOutput = flareCalculator.querySelector(
-        ".flare-result-stats div:nth-child(1) strong"
-    );
-
-    const resultHeat = flareCalculator.querySelector(
-        ".flare-result-stats div:nth-child(2) strong"
-    );
-
-    const resultOperation = flareCalculator.querySelector(
-        ".flare-result-stats div:nth-child(3) strong"
-    );
+        const resultOperation =
+            flareCalculator.querySelector(
+                ".flare-result-stats div:nth-child(3) strong"
+            );
 
 
-    /* =====================================================
-       UPDATE RESULT
-       ===================================================== */
+        function updateFlareResult() {
 
-    function updateFlareResult() {
-
-        if (!gasFlowInput || !resultPower) return;
-
-
-        /* ---------- READ FLOW ---------- */
-
-        const gasFlow =
-            parseFloat(
-                gasFlowInput.value.replace(",", ".")
-            ) || 0;
-
-
-        /* ---------- READ HOURS ---------- */
-
-        let hours =
-            operatingHoursInput
-                ? parseFloat(
-                    operatingHoursInput.value.replace(",", ".")
-                ) || 8000
-                : 8000;
-
-
-        /*
-         * 8760 = maximum theoretical hours in one year.
-         *
-         * Тут ми НЕ змінюємо введене користувачем
-         * значення автоматично.
-         */
-
-        hours = Math.max(0, hours);
-
-
-        /* ---------- VISUAL UPDATE ---------- */
-
-        if (resultBox) {
-            resultBox.classList.add("is-updating");
-
-            setTimeout(() => {
-                resultBox.classList.remove("is-updating");
-            }, 250);
-        }
-
-
-        /* =================================================
-           EMPTY STATE
-           ================================================= */
-
-        if (gasFlow <= 0) {
-
-            resultPower.textContent = "—";
-
-            if (resultConfiguration) {
-                resultConfiguration.textContent =
-                    "Очікуємо дані";
+            if (!gasFlowInput || !resultPower) {
+                return;
             }
 
+            const gasFlow =
+                parseFloat(
+                    gasFlowInput.value.replace(",", ".")
+                ) || 0;
+
+            const hours =
+                operatingHoursInput
+                    ? Math.max(
+                        0,
+                        parseFloat(
+                            operatingHoursInput.value
+                                .replace(",", ".")
+                        ) || 8000
+                    )
+                    : 8000;
+
+
+            if (resultBox) {
+
+                resultBox.classList.add(
+                    "is-updating"
+                );
+
+                setTimeout(function () {
+
+                    resultBox.classList.remove(
+                        "is-updating"
+                    );
+
+                }, 250);
+
+            }
+
+
+            if (gasFlow <= 0) {
+
+                resultPower.textContent = "—";
+
+                if (resultConfiguration) {
+                    resultConfiguration.textContent =
+                        "Очікуємо дані";
+                }
+
+                if (resultOutput) {
+                    resultOutput.textContent = "—";
+                }
+
+                if (resultHeat) {
+                    resultHeat.textContent = "—";
+                }
+
+                if (resultOperation) {
+                    resultOperation.textContent = "—";
+                }
+
+                return;
+
+            }
+
+
+            const referenceFlow = 10000;
+            const referencePower = 8.6;
+
+            let estimatedPower =
+                (gasFlow / referenceFlow) *
+                referencePower;
+
+            estimatedPower =
+                Math.max(
+                    0,
+                    Math.min(250, estimatedPower)
+                );
+
+            const powerText =
+                estimatedPower.toFixed(1);
+
+            resultPower.textContent =
+                powerText;
+
             if (resultOutput) {
-                resultOutput.textContent = "—";
+                resultOutput.textContent =
+                    powerText + " MW";
             }
 
             if (resultHeat) {
-                resultHeat.textContent = "—";
+                resultHeat.textContent =
+                    "CHP";
             }
 
             if (resultOperation) {
-                resultOperation.textContent = "—";
+
+                if (hours >= 7000) {
+
+                    resultOperation.textContent =
+                        "BASELOAD";
+
+                } else if (hours >= 4000) {
+
+                    resultOperation.textContent =
+                        "FLEXIBLE";
+
+                } else {
+
+                    resultOperation.textContent =
+                        "PEAKING";
+
+                }
+
             }
 
-            return;
-        }
+            let engineCount =
+                Math.ceil(
+                    estimatedPower / 4.3
+                );
 
+            engineCount =
+                Math.max(
+                    1,
+                    Math.min(20, engineCount)
+                );
 
-        /* =================================================
-           REFERENCE CALCULATION
-           =================================================
+            if (resultConfiguration) {
 
-           Reference:
-           10 000 Nm³/h → 8.6 MW
-
-           Це попередня оцінка,
-           а не фінальний інженерний розрахунок.
-        */
-
-        const referenceFlow = 10000;
-        const referencePower = 8.6;
-
-
-        let estimatedPower =
-            (gasFlow / referenceFlow) *
-            referencePower;
-
-
-        /* ---------- LIMIT ---------- */
-
-        estimatedPower = Math.max(
-            0,
-            Math.min(250, estimatedPower)
-        );
-
-
-        /* ---------- ROUND ---------- */
-
-        const powerText =
-            estimatedPower.toFixed(1);
-
-
-        /* ---------- POWER ---------- */
-
-        resultPower.textContent =
-            powerText;
-
-
-        /* ---------- OUTPUT ---------- */
-
-        if (resultOutput) {
-
-            resultOutput.textContent =
-                `${powerText} MW`;
-
-        }
-
-
-        /* =================================================
-           HEAT RECOVERY
-           ================================================= */
-
-        if (resultHeat) {
-
-            resultHeat.textContent =
-                "CHP";
-
-        }
-
-
-        /* =================================================
-           OPERATION MODE
-           ================================================= */
-
-        if (resultOperation) {
-
-            if (hours >= 7000) {
-
-                resultOperation.textContent =
-                    "BASELOAD";
-
-            } else if (hours >= 4000) {
-
-                resultOperation.textContent =
-                    "FLEXIBLE";
-
-            } else {
-
-                resultOperation.textContent =
-                    "PEAKING";
+                resultConfiguration.textContent =
+                    engineCount +
+                    " × AES 908 G/C";
 
             }
 
         }
 
 
-        /* =================================================
-           ENGINE CONFIGURATION
-           =================================================
+        if (gasFlowInput) {
 
-           Reference:
-           1 × AES 908 G/C ≈ 4.3 MW
-        */
-
-        let engineCount =
-            Math.ceil(
-                estimatedPower / 4.3
+            gasFlowInput.addEventListener(
+                "input",
+                updateFlareResult
             );
 
+        }
 
-        engineCount = Math.max(
-            1,
-            Math.min(20, engineCount)
-        );
+        if (operatingHoursInput) {
 
-
-        if (resultConfiguration) {
-
-            resultConfiguration.textContent =
-                `${engineCount} × AES 908 G/C`;
+            operatingHoursInput.addEventListener(
+                "input",
+                updateFlareResult
+            );
 
         }
 
+        if (gasTypeSelect) {
+
+            gasTypeSelect.addEventListener(
+                "change",
+                updateFlareResult
+            );
+
+        }
+
+        updateFlareResult();
+
     }
 
 
-    /* =====================================================
-       LIVE INPUT
-       ===================================================== */
+    /* =========================================================
+       PROJECTS — AUTO ROTATION
+    ========================================================= */
 
-    if (gasFlowInput) {
-
-        gasFlowInput.addEventListener(
-            "input",
-            updateFlareResult
+  const projectCards =
+        document.querySelectorAll(
+            "#projects .project-card"
         );
-
-    }
-
-
-    if (operatingHoursInput) {
-
-        operatingHoursInput.addEventListener(
-            "input",
-            updateFlareResult
-        );
-
-    }
-
-
-    if (gasTypeSelect) {
-
-        gasTypeSelect.addEventListener(
-            "change",
-            updateFlareResult
-        );
-
-    }
-
-
-    /* =====================================================
-       INITIAL CALCULATION
-       ===================================================== */
-
-    updateFlareResult();
-
-});
-
-});
-
-/* =========================================================
-   PROJECTS — AUTO CARD ROTATION
-   ========================================================= */
-
-console.log("PROJECTS SCRIPT START");
-
-const projectCards = document.querySelectorAll(
-    "#projects .project-card"
-);
 
 console.log("PROJECT CARDS:", projectCards.length);
 
-if (projectCards.length) {
+    if (projectCards.length) {
 
-    let currentProject = 0;
+        let currentProject = 0;
 
-    projectCards[currentProject].classList.add("is-active");
+        projectCards.forEach(function (card) {
 
-    setInterval(() => {
-
-        console.log("SWITCH TO:", currentProject);
-
-        projectCards.forEach(card => {
             card.classList.remove("is-active");
+
         });
 
-        projectCards[currentProject].classList.add("is-active");
-
-        currentProject++;
-
-        if (currentProject >= projectCards.length) {
-            currentProject = 0;
-        }
-
-    }, 5000);
-}
-
-/* =========================================================
-   APPLICATIONS — SMOOTH VIDEO ROTATION
-   ========================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const track = document.querySelector(".applications-track");
-    const items = document.querySelectorAll(".application-item");
-    const preview = document.querySelector(".applications-preview");
-    const video = document.querySelector(".applications-preview-video");
-
-    if (!track || !items.length || !preview || !video) return;
+        projectCards[0].classList.add("is-active");
 
 
-    let currentIndex = 0;
-    let rotationTimer = null;
-    let isHovering = false;
-    let isAnimating = false;
+        setInterval(function () {
+
+            projectCards[currentProject]
+                .classList.remove("is-active");
+
+            currentProject++;
+
+            if (
+                currentProject >=
+                projectCards.length
+            ) {
+                currentProject = 0;
+            }
+
+            projectCards[currentProject]
+                .classList.add("is-active");
+
+        }, 5000);
+
+    }
 
 
-    /* =====================================================
-       SHOW VIDEO
-       ===================================================== */
+    /* =========================================================
+       APPLICATIONS — VIDEO
+    ========================================================= */
 
-    function showVideo(index) {
-
-        const item = items[index];
-        const source = item.dataset.video;
-
-        if (!source) return;
-
-        currentIndex = index;
-
-        items.forEach((el, i) => {
-            el.classList.toggle(
-                "is-active",
-                i === index
-            );
-        });
-
-        video.src = source;
-        video.currentTime = 0;
-
-        track.classList.add("is-previewing");
-        preview.classList.remove(
-            "is-exiting",
-            "is-entering"
+    const applicationsTrack =
+        document.querySelector(
+            ".applications-track"
         );
 
-        preview.classList.add("is-visible");
+    const applicationItems =
+        document.querySelectorAll(
+            ".application-item"
+        );
 
-        video.play().catch(() => {});
+    const applicationsPreview =
+        document.querySelector(
+            ".applications-preview"
+        );
 
-    }
-
-
-    /* =====================================================
-       HIDE VIDEO
-       ===================================================== */
-
-    function hideVideo() {
-
-        preview.classList.remove("is-visible");
-        preview.classList.add("is-exiting");
-
-        video.pause();
-
-    }
+    const applicationsVideo =
+        document.querySelector(
+            ".applications-preview-video"
+        );
 
 
-    /* =====================================================
-       SMOOTH AUTO TRANSITION
-       ===================================================== */
+    if (
+        applicationsTrack &&
+        applicationItems.length &&
+        applicationsPreview &&
+        applicationsVideo
+    ) {
 
-    function changeVideo() {
-
-        if (isHovering || isAnimating) return;
-
-        isAnimating = true;
-
-        /* 1. Current video leaves */
-
-        preview.classList.add("is-exiting");
-
-        setTimeout(() => {
-
-            if (isHovering) {
-                isAnimating = false;
-                return;
-            }
-
-            /* 2. Pause — line is visible */
-
-            preview.classList.remove("is-visible");
-
-            video.pause();
-
-        }, 650);
+        let currentIndex = 0;
+        let rotationTimer = null;
+        let isHovering = false;
+        let isAnimating = false;
 
 
-        setTimeout(() => {
+        function showApplication(index) {
 
-            if (isHovering) {
-                isAnimating = false;
-                return;
-            }
+            const item =
+                applicationItems[index];
 
-            /* 3. Select next */
+            if (!item) return;
 
-            currentIndex =
-                (currentIndex + 1) % items.length;
+            const source =
+                item.getAttribute("data-video");
 
-            const nextItem = items[currentIndex];
-            const nextSource = nextItem.dataset.video;
+            if (!source) return;
 
+            currentIndex = index;
 
-            items.forEach((el, i) => {
+            applicationItems.forEach(
+                function (element, i) {
 
-                el.classList.toggle(
-                    "is-active",
-                    i === currentIndex
-                );
+                    element.classList.toggle(
+                        "is-active",
+                        i === index
+                    );
 
-            });
+                }
+            );
 
+            applicationsVideo.src = source;
+            applicationsVideo.load();
 
-            video.src = nextSource;
-            video.currentTime = 0;
+            applicationsTrack.classList.add(
+                "is-previewing"
+            );
 
-
-            /* 4. New video enters */
-
-            preview.classList.remove("is-exiting");
-
-            preview.classList.add("is-entering");
-            preview.classList.add("is-visible");
-
-            track.classList.add("is-previewing");
-
-            video.play().catch(() => {});
-
-
-        }, 1150);
-
-
-        setTimeout(() => {
-
-            preview.classList.remove("is-entering");
-
-            isAnimating = false;
-
-        }, 1650);
-
-    }
-
-
-    /* =====================================================
-       AUTO ROTATION
-       ===================================================== */
-
-    function startRotation() {
-
-        clearInterval(rotationTimer);
-
-        rotationTimer = setInterval(() => {
-
-            changeVideo();
-
-        }, 3000);
-
-    }
-
-
-    /* =====================================================
-       HOVER
-       ===================================================== */
-
-    items.forEach((item, index) => {
-
-        item.addEventListener("mouseenter", () => {
-
-            isHovering = true;
-
-            clearInterval(rotationTimer);
-
-            isAnimating = false;
-
-            preview.classList.remove(
+            applicationsPreview.classList.remove(
                 "is-exiting",
                 "is-entering"
             );
 
-            showVideo(index);
+            applicationsPreview.classList.add(
+                "is-visible"
+            );
 
-        });
+            applicationsVideo.play().catch(
+                function () {}
+            );
 
-
-        item.addEventListener("mouseleave", () => {
-
-            isHovering = false;
-
-            startRotation();
-
-        });
-
-    });
-
-
-    /* =====================================================
-       INITIAL STATE
-       ===================================================== */
-
-    showVideo(0);
-    startRotation();
-
-});
-
-
-/* =========================================================
-   BACK TO TOP
-   ========================================================= */
-
-const backToTop = document.querySelector(".back-to-top");
-
-if (backToTop) {
-
-    window.addEventListener("scroll", () => {
-
-        if (window.scrollY > 500) {
-            backToTop.classList.add("is-visible");
-        } else {
-            backToTop.classList.remove("is-visible");
         }
 
-    });
 
-    backToTop.addEventListener("click", () => {
+        function changeApplication() {
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+            if (
+                isHovering ||
+                isAnimating
+            ) {
+                return;
+            }
 
-    });
+            isAnimating = true;
 
-}
-
-/* =========================================================
-   ABOUT AES — SCROLL ANIMATION
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const aboutSection =
-        document.querySelector("#about");
-
-    if (!aboutSection) return;
+            applicationsPreview.classList.add(
+                "is-exiting"
+            );
 
 
-    const points =
-        aboutSection.querySelectorAll(
-            ".about-aes-point"
-        );
+            setTimeout(function () {
+
+                if (isHovering) {
+
+                    isAnimating = false;
+                    return;
+
+                }
+
+                applicationsPreview.classList.remove(
+                    "is-visible"
+                );
+
+                applicationsVideo.pause();
+
+            }, 650);
 
 
-    if (!points.length) return;
+            setTimeout(function () {
 
+                if (isHovering) {
 
-    const observer =
-        new IntersectionObserver(
-            (entries) => {
+                    isAnimating = false;
+                    return;
 
-                entries.forEach((entry) => {
+                }
 
-                    if (!entry.isIntersecting) return;
+                currentIndex =
+                    (currentIndex + 1) %
+                    applicationItems.length;
 
+                const nextItem =
+                    applicationItems[
+                        currentIndex
+                    ];
 
-                    aboutSection.classList.add(
-                        "is-visible"
+                const nextSource =
+                    nextItem.getAttribute(
+                        "data-video"
                     );
 
 
-                    points.forEach((point, index) => {
+                applicationItems.forEach(
+                    function (element, i) {
 
-                        setTimeout(() => {
+                        element.classList.toggle(
+                            "is-active",
+                            i === currentIndex
+                        );
 
-                            point.classList.add(
-                                "is-active"
-                            );
-
-                        }, index * 500);
-
-                    });
+                    }
+                );
 
 
-                    observer.unobserve(
-                        aboutSection
-                    );
+                applicationsVideo.src =
+                    nextSource;
 
-                });
+                applicationsVideo.load();
 
-            },
-            {
-                threshold: 0.25
+                applicationsPreview.classList.remove(
+                    "is-exiting"
+                );
+
+                applicationsPreview.classList.add(
+                    "is-entering",
+                    "is-visible"
+                );
+
+                applicationsTrack.classList.add(
+                    "is-previewing"
+                );
+
+                applicationsVideo.play().catch(
+                    function () {}
+                );
+
+            }, 1150);
+
+
+            setTimeout(function () {
+
+                applicationsPreview.classList.remove(
+                    "is-entering"
+                );
+
+                isAnimating = false;
+
+            }, 1650);
+
+        }
+
+
+        function startApplicationRotation() {
+
+            clearInterval(
+                rotationTimer
+            );
+
+            rotationTimer =
+                setInterval(
+                    changeApplication,
+                    3000
+                );
+
+        }
+
+
+        applicationItems.forEach(
+            function (item, index) {
+
+                item.addEventListener(
+                    "mouseenter",
+                    function () {
+
+                        isHovering = true;
+
+                        clearInterval(
+                            rotationTimer
+                        );
+
+                        isAnimating = false;
+
+                        applicationsPreview.classList.remove(
+                            "is-exiting",
+                            "is-entering"
+                        );
+
+                        showApplication(index);
+
+                    }
+                );
+
+
+                item.addEventListener(
+                    "mouseleave",
+                    function () {
+
+                        isHovering = false;
+
+                        startApplicationRotation();
+
+                    }
+                );
+
             }
         );
 
 
-    observer.observe(aboutSection);
+        showApplication(0);
+        startApplicationRotation();
+
+    }
+
+
+    /* =========================================================
+       BACK TO TOP
+    ========================================================= */
+
+    const backToTop =
+        document.querySelector(
+            ".back-to-top"
+        );
+
+    if (backToTop) {
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (window.scrollY > 500) {
+
+                    backToTop.classList.add(
+                        "is-visible"
+                    );
+
+                } else {
+
+                    backToTop.classList.remove(
+                        "is-visible"
+                    );
+
+                }
+
+            }
+        );
+
+
+        backToTop.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       ABOUT AES — SCROLL ANIMATION
+    ========================================================= */
+
+    const aboutSection =
+        document.querySelector("#about");
+
+    if (
+        aboutSection &&
+        "IntersectionObserver" in window
+    ) {
+
+        const points =
+            aboutSection.querySelectorAll(
+                ".about-aes-point"
+            );
+
+        if (points.length) {
+
+            const observer =
+                new IntersectionObserver(
+                    function (entries) {
+
+                        entries.forEach(
+                            function (entry) {
+
+                                if (
+                                    !entry.isIntersecting
+                                ) {
+                                    return;
+                                }
+
+                                aboutSection.classList.add(
+                                    "is-visible"
+                                );
+
+                                points.forEach(
+                                    function (
+                                        point,
+                                        index
+                                    ) {
+
+                                        setTimeout(
+                                            function () {
+
+                                                point.classList.add(
+                                                    "is-active"
+                                                );
+
+                                            },
+                                            index * 500
+                                        );
+
+                                    }
+                                );
+
+                                observer.unobserve(
+                                    aboutSection
+                                );
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold: 0.25
+                    }
+                );
+
+            observer.observe(
+                aboutSection
+            );
+
+        }
+
+    }
+
+
+    /* =========================================================
+       TECHNOLOGY — TABS
+    ========================================================= */
+
+    const technologyOptions =
+        document.querySelectorAll(
+            ".technology-option"
+        );
+
+    const technologyImage =
+        document.getElementById(
+            "technologyPreviewImage"
+        );
+
+    const technologyTitle =
+        document.getElementById(
+            "technologyPreviewTitle"
+        );
+
+    const technologyDescription =
+        document.getElementById(
+            "technologyPreviewDescription"
+        );
+
+
+    if (
+        technologyOptions.length &&
+        technologyImage &&
+        technologyTitle &&
+        technologyDescription
+    ) {
+
+        technologyOptions.forEach(
+            function (option) {
+
+                option.addEventListener(
+                    "click",
+                    function () {
+
+                        technologyOptions.forEach(
+                            function (item) {
+
+                                item.classList.remove(
+                                    "is-active"
+                                );
+
+                                item.setAttribute(
+                                    "aria-selected",
+                                    "false"
+                                );
+
+                            }
+                        );
+
+
+                        option.classList.add(
+                            "is-active"
+                        );
+
+                        option.setAttribute(
+                            "aria-selected",
+                            "true"
+                        );
+
+
+                        const image =
+                            option.getAttribute(
+                                "data-technology-image"
+                            );
+
+                        const title =
+                            option.getAttribute(
+                                "data-technology-title"
+                            );
+
+                        const description =
+                            option.getAttribute(
+                                "data-technology-description"
+                            );
+
+                        const alt =
+                            option.getAttribute(
+                                "data-technology-alt"
+                            );
+
+
+                        if (image) {
+
+                            technologyImage.classList.add(
+                                "is-changing"
+                            );
+
+                            setTimeout(
+                                function () {
+
+                                    technologyImage.src =
+                                        image;
+
+                                    if (alt) {
+                                        technologyImage.alt =
+                                            alt;
+                                    }
+
+                                    technologyImage.classList.remove(
+                                        "is-changing"
+                                    );
+
+                                },
+                                180
+                            );
+
+                        }
+
+
+                        if (title) {
+
+                            technologyTitle.textContent =
+                                title;
+
+                        }
+
+                        if (description) {
+
+                            technologyDescription.textContent =
+                                description;
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
 
 });
-

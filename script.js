@@ -974,3 +974,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+/* =========================================================
+   TECHNOLOGY — TABS
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const options = document.querySelectorAll(".technology-option");
+    const image = document.getElementById("technologyPreviewImage");
+    const title = document.getElementById("technologyPreviewTitle");
+    const description = document.getElementById("technologyPreviewDescription");
+
+    if (!options.length || !image || !title || !description) {
+        return;
+    }
+
+    options.forEach(function (option) {
+
+        option.addEventListener("click", function () {
+
+            /* ACTIVE TAB */
+
+            options.forEach(function (item) {
+                item.classList.remove("is-active");
+                item.setAttribute("aria-selected", "false");
+            });
+
+            option.classList.add("is-active");
+            option.setAttribute("aria-selected", "true");
+
+
+            /* DATA */
+
+            const newImage = option.getAttribute("data-technology-image");
+            const newTitle = option.getAttribute("data-technology-title");
+            const newDescription = option.getAttribute("data-technology-description");
+            const newAlt = option.getAttribute("data-technology-alt");
+
+
+            /* IMAGE TRANSITION */
+
+            image.classList.add("is-changing");
+
+
+            setTimeout(function () {
+
+                image.src = newImage;
+                image.alt = newAlt;
+
+                title.textContent = newTitle;
+                description.textContent = newDescription;
+
+                image.classList.remove("is-changing");
+
+            }, 180);
+
+        });
+
+    });
+
+});
+

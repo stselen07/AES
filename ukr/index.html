@@ -2601,8 +2601,10 @@
     class="section contact-footer"
 >
 
-    <div class="container">
 
+    <div class="contact-footer-overlay"></div>
+
+    <div class="container">
 
         <div class="contact-footer-top">
 
@@ -2627,7 +2629,6 @@
 
             </div>
 
-
             <a
                 href="mailto:info@aes-int.com"
                 class="contact-footer-button"
@@ -2639,8 +2640,22 @@
         </div>
 
 
-        <div class="contact-footer-info">
+<div class="contact-footer-video-wrap">
 
+    <video
+        class="contact-footer-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true"
+    >
+        <source src="../video/cooling-footer.mp4" type="video/mp4">
+    </video>
+
+</div>
+
+        <div class="contact-footer-info">
 
             <div class="contact-item">
 
@@ -2693,7 +2708,6 @@
 
             </div>
 
-
         </div>
 
 
@@ -2709,7 +2723,6 @@
 
             </div>
 
-
             <p>
                 © 2026 Austro Energy Systems AG.
                 All rights reserved.
@@ -2717,20 +2730,115 @@
 
         </div>
 
-
     </div>
 
 </section>
 
-
 </main>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-<button class="back-to-top" type="button" aria-label="Повернутися нагору">
-    ↑
-</button>
+    const technologyOptions =
+        document.querySelectorAll(".technology-option");
 
-<script src="../ukr/ukr-script.js"></script>
+    const technologyImage =
+        document.getElementById("technologyPreviewImage");
+
+    const technologyTitle =
+        document.getElementById("technologyPreviewTitle");
+
+    const technologyDescription =
+        document.getElementById("technologyPreviewDescription");
+
+
+    if (
+        !technologyOptions.length ||
+        !technologyImage ||
+        !technologyTitle ||
+        !technologyDescription
+    ) {
+        return;
+    }
+
+
+    technologyOptions.forEach(function (option) {
+
+        option.addEventListener("click", function () {
+
+            /* ACTIVE OPTION */
+
+            technologyOptions.forEach(function (item) {
+
+                item.classList.remove("is-active");
+
+                item.setAttribute(
+                    "aria-selected",
+                    "false"
+                );
+
+            });
+
+            option.classList.add("is-active");
+
+            option.setAttribute(
+                "aria-selected",
+                "true"
+            );
+
+
+            /* GET DATA */
+
+            const image =
+                option.getAttribute(
+                    "data-technology-image"
+                );
+
+            const title =
+                option.getAttribute(
+                    "data-technology-title"
+                );
+
+            const description =
+                option.getAttribute(
+                    "data-technology-description"
+                );
+
+            const alt =
+                option.getAttribute(
+                    "data-technology-alt"
+                );
+
+
+            /* CHANGE IMAGE */
+
+            technologyImage.classList.add(
+                "is-changing"
+            );
+
+            setTimeout(function () {
+
+                technologyImage.src = image;
+                technologyImage.alt = alt;
+
+                technologyTitle.textContent = title;
+
+                technologyDescription.textContent =
+                    description;
+
+                technologyImage.classList.remove(
+                    "is-changing"
+                );
+
+            }, 180);
+
+        });
+
+    });
+
+});
+</script>
+
+<script src="ukr-script.js"></script>
 
 </body>
-
 </html>

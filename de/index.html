@@ -2764,59 +2764,140 @@
 </section>
 
 
-
 <!-- =========================================================
-     CONTACT
+     FOOTER
 ========================================================= -->
 
 <section
     id="contact"
-    class="section contact"
+    class="section contact-footer"
 >
+
+
+    <div class="contact-footer-overlay"></div>
 
     <div class="container">
 
+        <div class="contact-footer-top">
 
-        <div class="contact-content">
+            <div class="contact-footer-title">
 
+                <p class="eyebrow">
+                    KONTAKT
+                </p>
 
-            <p class="eyebrow">
-                KONTAKT
-            </p>
+                <h2>
+                    Gestalten wir die Zukunft
+                    <span>
+                        gemeinsam.
+                    </span>
+                </h2>
 
+                <p>
+                    Kontaktieren Sie uns,
+                    um Ihr Energieprojekt
+                    zu besprechen.
+                </p>
 
-            <h2>
-
-                Lassen Sie uns über
-
-                <span>
-                    Ihr Projekt sprechen.
-                </span>
-
-            </h2>
-
-
-            <p>
-                Teilen Sie uns die wichtigsten
-                Informationen zu Ihrem Projekt mit.
-                Unser Team bespricht mit Ihnen die
-                nächsten Schritte.
-            </p>
-
+            </div>
 
             <a
-                href="mailto:office@austro-energy.com"
-                class="button"
+                href="mailto:info@aes-int.com"
+                class="contact-footer-button"
             >
-
                 Kontakt aufnehmen
-
-                <span>
-                    ↗
-                </span>
-
+                <span>↗</span>
             </a>
 
+        </div>
+
+        <div class="contact-footer-video-wrap">
+
+    <video
+        class="contact-footer-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true"
+    >
+        <source src="../video/cooling-footer.mp4" type="video/mp4">
+    </video>
+
+</div>
+
+        <div class="contact-footer-info">
+
+            <div class="contact-item">
+
+                <span>
+                    E-MAIL
+                </span>
+
+                <a href="mailto:info@aes-int.com">
+                    info@aes-int.com
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span>
+                    TELEFON
+                </span>
+
+                <a href="tel:+4315351770">
+                    +43 1 535 17 70
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span>
+                    STANDORT
+                </span>
+
+                <p>
+                    Wien, Österreich
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span>
+                    WEBSITE
+                </span>
+
+                <a href="https://aes-int.com">
+                    aes-int.com
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-footer-bottom">
+
+            <div class="footer-logo">
+
+                AUSTRO
+                <br>
+                ENERGY
+                <br>
+                SYSTEMS
+
+            </div>
+
+            <p>
+                © 2026 Austro Energy Systems AG.
+                Alle Rechte vorbehalten.
+            </p>
 
         </div>
 
@@ -2824,88 +2905,108 @@
 
 </section>
 
-
 </main>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const technologyOptions =
+        document.querySelectorAll(".technology-option");
+
+    const technologyImage =
+        document.getElementById("technologyPreviewImage");
+
+    const technologyTitle =
+        document.getElementById("technologyPreviewTitle");
+
+    const technologyDescription =
+        document.getElementById("technologyPreviewDescription");
 
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer class="footer">
-
-    <div class="container footer-inner">
-
-
-        <div class="footer-brand">
-
-            AUSTRO
-            ENERGY
-            SYSTEMS
-
-        </div>
+    if (
+        !technologyOptions.length ||
+        !technologyImage ||
+        !technologyTitle ||
+        !technologyDescription
+    ) {
+        return;
+    }
 
 
-        <div class="footer-links">
+    technologyOptions.forEach(function (option) {
 
-            <a href="#solutions">
-                Lösungen
-            </a>
+        option.addEventListener("click", function () {
 
-            <a href="#projects">
-                Projekte
-            </a>
+            /* ACTIVE OPTION */
 
-            <a href="#technology">
-                Technologie
-            </a>
+            technologyOptions.forEach(function (item) {
 
-            <a href="#about">
-                Über AES
-            </a>
+                item.classList.remove("is-active");
 
-            <a href="#contact">
-                Kontakt
-            </a>
+                item.setAttribute(
+                    "aria-selected",
+                    "false"
+                );
 
-        </div>
+            });
 
+            option.classList.add("is-active");
 
-        <div class="footer-language">
-
-            <a href="../ukr/index.html">
-                UA
-            </a>
-
-            <a href="../index.html">
-                EN
-            </a>
-
-            <a
-                href="index.html"
-                class="active"
-            >
-                DE
-            </a>
-
-        </div>
+            option.setAttribute(
+                "aria-selected",
+                "true"
+            );
 
 
-        <div class="footer-copy">
+            /* GET DATA */
 
-            © Austro Energy Systems
+            const image =
+                option.getAttribute(
+                    "data-technology-image"
+                );
 
-        </div>
+            const title =
+                option.getAttribute(
+                    "data-technology-title"
+                );
+
+            const description =
+                option.getAttribute(
+                    "data-technology-description"
+                );
+
+            const alt =
+                option.getAttribute(
+                    "data-technology-alt"
+                );
 
 
-    </div>
+            /* CHANGE IMAGE */
 
-</footer>
+            technologyImage.classList.add(
+                "is-changing"
+            );
 
+            setTimeout(function () {
 
+                technologyImage.src = image;
+                technologyImage.alt = alt;
 
-<script src="../de/de-script.js"></script>
+                technologyTitle.textContent = title;
 
+                technologyDescription.textContent =
+                    description;
+
+                technologyImage.classList.remove(
+                    "is-changing"
+                );
+
+            }, 180);
+
+        });
+
+    });
+
+});
+</script>
 </body>
-
 </html>

@@ -1332,83 +1332,254 @@
 <!-- =========================================================
      CONTACT
 ========================================================= -->
-<section class="section contact-footer" id="contact">
-<div class="container">
-<div class="contact-footer-top">
-<div class="contact-footer-title">
-<p class="eyebrow">
-                    CONTACTS
+<section
+    id="contact"
+    class="section contact-footer"
+>
+
+    
+    <div class="contact-footer-overlay"></div>
+
+    <div class="container">
+
+        <div class="contact-footer-top">
+
+            <div class="contact-footer-title">
+
+                <p class="eyebrow">
+                    CONTACT
                 </p>
-<h2>
-                    Building the future
+
+                <h2>
+                    Creating the future
                     <span>
                         together.
                     </span>
-</h2>
-<p>
-                    Get in touch to discuss your energy project.
+                </h2>
+
+                <p>
+                    Get in touch with us
+                    to discuss your
+                    energy project.
                 </p>
-</div>
-<a class="contact-footer-button" href="mailto:info@aes-int.com">
+
+            </div>
+
+            <a
+                href="mailto:info@aes-int.com"
+                class="contact-footer-button"
+            >
                 Contact us
                 <span>↗</span>
-</a>
+            </a>
+
+        </div>
+
+        <div class="contact-footer-video-wrap">
+
+    <video
+        class="contact-footer-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true"
+    >
+        <source src="../video/cooling-footer.mp4" type="video/mp4">
+    </video>
+
 </div>
-<div class="contact-footer-info">
-<div class="contact-item">
-<span>
+
+
+        <div class="contact-footer-info">
+
+            <div class="contact-item">
+
+                <span>
                     EMAIL
                 </span>
-<a href="mailto:info@aes-int.com">
+
+                <a href="mailto:info@aes-int.com">
                     info@aes-int.com
                 </a>
-</div>
-<div class="contact-item">
-<span>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span>
                     PHONE
                 </span>
-<a href="tel:+4315351770">
+
+                <a href="tel:+4315351770">
                     +43 1 535 17 70
                 </a>
-</div>
-<div class="contact-item">
-<span>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span>
                     LOCATION
                 </span>
-<p>
+
+                <p>
                     Vienna, Austria
                 </p>
-</div>
-<div class="contact-item">
-<span>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span>
                     WEBSITE
                 </span>
-<a href="https://aes-int.com">
+
+                <a href="https://aes-int.com">
                     aes-int.com
                 </a>
-</div>
-</div>
-<div class="contact-footer-bottom">
-<div class="footer-logo">
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-footer-bottom">
+
+            <div class="footer-logo">
 
                 AUSTRO
-                <br/>
+                <br>
                 ENERGY
-                <br/>
+                <br>
                 SYSTEMS
 
             </div>
-<p>
+
+            <p>
                 © 2026 Austro Energy Systems AG.
                 All rights reserved.
             </p>
-</div>
-</div>
+
+        </div>
+
+    </div>
+
 </section>
+
 </main>
-<button aria-label="Back to top" class="back-to-top" type="button">
-    ↑
-</button>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const technologyOptions =
+        document.querySelectorAll(".technology-option");
+
+    const technologyImage =
+        document.getElementById("technologyPreviewImage");
+
+    const technologyTitle =
+        document.getElementById("technologyPreviewTitle");
+
+    const technologyDescription =
+        document.getElementById("technologyPreviewDescription");
+
+
+    if (
+        !technologyOptions.length ||
+        !technologyImage ||
+        !technologyTitle ||
+        !technologyDescription
+    ) {
+        return;
+    }
+
+
+    technologyOptions.forEach(function (option) {
+
+        option.addEventListener("click", function () {
+
+            /* ACTIVE OPTION */
+
+            technologyOptions.forEach(function (item) {
+
+                item.classList.remove("is-active");
+
+                item.setAttribute(
+                    "aria-selected",
+                    "false"
+                );
+
+            });
+
+
+            option.classList.add("is-active");
+
+            option.setAttribute(
+                "aria-selected",
+                "true"
+            );
+
+
+            /* GET DATA */
+
+            const image =
+                option.getAttribute(
+                    "data-technology-image"
+                );
+
+            const title =
+                option.getAttribute(
+                    "data-technology-title"
+                );
+
+            const description =
+                option.getAttribute(
+                    "data-technology-description"
+                );
+
+            const alt =
+                option.getAttribute(
+                    "data-technology-alt"
+                );
+
+
+            /* CHANGE IMAGE */
+
+            technologyImage.classList.add(
+                "is-changing"
+            );
+
+
+            setTimeout(function () {
+
+                technologyImage.src = image;
+
+                technologyImage.alt = alt;
+
+                technologyTitle.textContent = title;
+
+                technologyDescription.textContent =
+                    description;
+
+                technologyImage.classList.remove(
+                    "is-changing"
+                );
+
+            }, 180);
+
+        });
+
+    });
+
+});
+</script>
+
 <script src="script.js"></script>
+
 </body>
+
 </html>

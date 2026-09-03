@@ -22,8 +22,7 @@
 
 .section-heading,
 .technology-header,
-.energy-potential-header,
-.applications-header {
+.energy-potential-header {
     margin-bottom: var(--heading-space);
 }
 
@@ -41,8 +40,7 @@
 /* The custom sections previously used unrelated 58–70px paddings. */
 .energy-potential,
 .turnkey,
-.why-aes,
-.applications {
+.why-aes {
     padding-block: var(--section-space);
 }
 
@@ -83,14 +81,6 @@
     max-width: 840px;
 }
 
-.applications-track {
-    min-height: 168px;
-}
-
-.application-item {
-    min-height: 168px;
-    padding: 30px 22px;
-}
 
 .about-content {
     max-width: 900px;
