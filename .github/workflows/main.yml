@@ -9,23 +9,26 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Get latest code
+        uses: actions/checkout@v6
         with:
           lfs: true
 
-      - name: Deploy via FTPS
+      - name: Deploy website via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          security: loose
           port: 21
+          security: loose
+          timeout: 120000
           server-dir: AES_ukr_clean_2_3/
           exclude: |
             **/.git*
             **/.git*/**
+            **/.github/**
             **/.github/**
