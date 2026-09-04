@@ -1035,3 +1035,110 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+/* =========================================================
+   PROJECTS PDF MODAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const openButton =
+        document.getElementById("openProjectsPdf");
+
+    const modal =
+        document.getElementById("projectsPdfModal");
+
+    const closeButton =
+        document.getElementById("closeProjectsPdf");
+
+    const overlay =
+        modal
+            ? modal.querySelector(".pdf-modal-overlay")
+            : null;
+
+
+    if (
+        !openButton ||
+        !modal ||
+        !closeButton ||
+        !overlay
+    ) {
+        return;
+    }
+
+
+    /* =====================================================
+       OPEN PDF
+    ===================================================== */
+
+    openButton.addEventListener(
+        "click",
+        function () {
+
+            modal.classList.add("is-open");
+
+            modal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.classList.add(
+                "pdf-modal-open"
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       CLOSE PDF
+    ===================================================== */
+
+    function closePdfModal() {
+
+        modal.classList.remove("is-open");
+
+        modal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.classList.remove(
+            "pdf-modal-open"
+        );
+
+    }
+
+
+    closeButton.addEventListener(
+        "click",
+        closePdfModal
+    );
+
+
+    overlay.addEventListener(
+        "click",
+        closePdfModal
+    );
+
+
+    /* =====================================================
+       ESC
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                modal.classList.contains("is-open")
+            ) {
+
+                closePdfModal();
+
+            }
+
+        }
+    );
+
+});

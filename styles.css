@@ -2829,6 +2829,141 @@ a {
 }
 
 /* =========================================================
-   APPLICATIONS + ABOUT AES — SPACING FIX
-   ========================================================= */
+   PROJECTS PDF MODAL
+========================================================= */
 
+.pdf-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+.pdf-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* BACKGROUND */
+
+.pdf-modal-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(8, 18, 38, 0.82);
+
+    backdrop-filter: blur(6px);
+}
+
+
+/* PDF WINDOW */
+
+.pdf-modal-window {
+    position: relative;
+    z-index: 2;
+
+    width: min(1100px, 90vw);
+    height: min(800px, 88vh);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+
+/* PDF */
+
+.pdf-modal-frame {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+
+/* CLOSE BUTTON */
+
+.pdf-modal-close {
+    position: absolute;
+
+    top: -18px;
+    right: -18px;
+
+    z-index: 3;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #bc8a28;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.pdf-modal-close:hover {
+    transform: rotate(90deg);
+    opacity: 0.85;
+}
+
+
+/* LOCK PAGE SCROLL */
+
+body.pdf-modal-open {
+    overflow: hidden;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .pdf-modal-window {
+        width: 94vw;
+        height: 82vh;
+    }
+
+
+    .pdf-modal-close {
+        top: -14px;
+        right: -10px;
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 24px;
+    }
+
+}

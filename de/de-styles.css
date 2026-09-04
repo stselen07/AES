@@ -7946,3 +7946,122 @@ section[id] {
     }
 
 }
+
+/* =========================================================
+   SOLUTION DETAIL PAGES
+========================================================= */
+
+.solution-detail {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #f5f4ef;
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.45s ease,
+        visibility 0s linear 0.45s;
+}
+
+.solution-detail.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.45s ease,
+        visibility 0s linear 0s;
+}
+
+
+.solution-detail-page {
+    display: none;
+    min-height: 100vh;
+    padding: 140px 7vw 100px;
+}
+
+
+.solution-detail-page.is-active {
+    display: block;
+}
+
+
+.solution-detail-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.solution-detail-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 90px;
+
+    padding: 0;
+
+    border: 0;
+    background: none;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #12213f;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.solution-detail-back:hover {
+    opacity: 0.65;
+    transform: translateX(-4px);
+}
+
+
+.solution-detail-page .eyebrow {
+    display: block;
+    margin-bottom: 25px;
+}
+
+
+.solution-detail-page h2 {
+    max-width: 950px;
+    margin: 0 0 35px;
+
+    font-size: clamp(52px, 7vw, 110px);
+    line-height: 0.95;
+}
+
+
+.solution-detail-page h2 span {
+    display: block;
+    color: #bc8a28;
+}
+
+
+.solution-detail-intro {
+    max-width: 650px;
+
+    margin: 0;
+
+    font-size: 22px;
+    line-height: 1.55;
+
+    color: #5f6b80;
+}

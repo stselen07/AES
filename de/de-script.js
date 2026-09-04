@@ -1218,3 +1218,125 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+/* =========================================================
+   SOLUTION DETAIL PAGES
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const solutionArrows =
+        document.querySelectorAll(".solution-arrow");
+
+    const solutionDetail =
+        document.getElementById("solutionDetails");
+
+    const solutionPages =
+        document.querySelectorAll(".solution-detail-page");
+
+    const solutionBackButtons =
+        document.querySelectorAll(".solution-detail-back");
+
+
+    if (
+        !solutionArrows.length ||
+        !solutionDetail ||
+        !solutionPages.length
+    ) {
+        return;
+    }
+
+
+    /* OPEN SOLUTION */
+
+    solutionArrows.forEach(function (arrow) {
+
+        arrow.addEventListener("click", function () {
+
+            const solution =
+                arrow.getAttribute("data-solution");
+
+
+            solutionPages.forEach(function (page) {
+
+                page.classList.remove("is-active");
+
+            });
+
+
+            const selectedPage =
+                document.querySelector(
+                    '[data-solution-page="' + solution + '"]'
+                );
+
+
+            if (!selectedPage) {
+                return;
+            }
+
+
+            selectedPage.classList.add("is-active");
+
+            solutionDetail.classList.add("is-open");
+
+            document.body.classList.add(
+                "solution-detail-open"
+            );
+
+            solutionDetail.scrollTop = 0;
+
+        });
+
+    });
+
+
+
+    /* BACK */
+
+    solutionBackButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            solutionDetail.classList.remove("is-open");
+
+            document.body.classList.remove(
+                "solution-detail-open"
+            );
+
+
+            setTimeout(function () {
+
+                solutionPages.forEach(function (page) {
+
+                    page.classList.remove("is-active");
+
+                });
+
+            }, 450);
+
+        });
+
+    });
+
+
+
+    /* ESC */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (
+            event.key === "Escape" &&
+            solutionDetail.classList.contains("is-open")
+        ) {
+
+            solutionDetail.classList.remove("is-open");
+
+            document.body.classList.remove(
+                "solution-detail-open"
+            );
+
+        }
+
+    });
+
+});

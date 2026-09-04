@@ -2272,13 +2272,14 @@
 
                 <div class="section-action">
 
-                    <a
-                        class="button secondary"
-                        href="#projects"
-                    >
-                        Explore all projects
-                        <span>↗</span>
-                    </a>
+                    <button
+    class="button secondary projects-pdf-button"
+    type="button"
+    id="openProjectsPdf"
+>
+    Explore all projects
+    <span>↗</span>
+</button>
 
                 </div>
 
@@ -3037,6 +3038,38 @@
     </main>
 
 
+<!-- =========================================================
+     PROJECTS PDF MODAL
+========================================================= -->
+
+<div
+    class="pdf-modal"
+    id="projectsPdfModal"
+    aria-hidden="true"
+>
+
+    <div class="pdf-modal-overlay"></div>
+
+    <div class="pdf-modal-window">
+
+        <button
+            class="pdf-modal-close"
+            type="button"
+            id="closeProjectsPdf"
+            aria-label="Close PDF"
+        >
+            ×
+        </button>
+
+        <iframe
+            class="pdf-modal-frame"
+            src="images/Project-list-AES.pdf"
+            title="AES Project Reference List"
+        ></iframe>
+
+    </div>
+
+</div>
 
     <!-- =========================================================
          TECHNOLOGY SCRIPT
