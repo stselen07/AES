@@ -836,12 +836,21 @@
 
                 <div class="solution-detail-media">
 
-                    <img
-                        src="../images/KWK-anlage.jpg"
-                        alt="AES cogeneration plant"
-                    >
+    <img
+        src="../images/KWK-anlage.jpg"
+        alt="AES cogeneration plant"
+    >
 
-                </div>
+    <button
+        class="solution-detail-form-button"
+        type="button"
+        id="openQuestionnaire"
+    >
+        FILL OUT THE QUESTIONNAIRE
+        <span>↗</span>
+    </button>
+
+</div>
 
             </div>
 
@@ -4311,6 +4320,1477 @@
     ========================================================= -->
 
     <script src="script.js"></script>
+
+<!-- =========================================================
+     AES QUESTIONNAIRE — ENGLISH
+========================================================= -->
+
+<div
+    class="aes-questionnaire"
+    id="aesQuestionnaire"
+    aria-hidden="true"
+>
+
+    <div class="aes-questionnaire-inner">
+
+
+        <button
+            class="aes-questionnaire-close"
+            type="button"
+            id="closeQuestionnaire"
+            aria-label="Close questionnaire"
+        >
+            ×
+        </button>
+
+
+        <div class="aes-questionnaire-header">
+
+            <span class="eyebrow">
+                AES · PROJECT REQUEST
+            </span>
+
+            <h2>
+                Questionnaire
+            </h2>
+
+            <p>
+                Please provide the following information
+                so that we can assess your energy requirements.
+            </p>
+
+        </div>
+
+
+        <form
+            id="aesQuestionnaireForm"
+            action="send-questionnaire.php"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+
+
+            <!-- =================================================
+                 CONTACT
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>00</span>
+                    <h3>Project &amp; Contact</h3>
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Customer
+                        <input
+                            type="text"
+                            name="customer"
+                        >
+                    </label>
+
+
+                    <label>
+                        Project name or number
+                        <input
+                            type="text"
+                            name="project"
+                        >
+                    </label>
+
+
+                    <label>
+                        Contact person *
+                        <input
+                            type="text"
+                            name="contact_person"
+                            required
+                        >
+                    </label>
+
+
+                    <label>
+                        Telephone / Fax
+                        <input
+                            type="text"
+                            name="phone"
+                        >
+                    </label>
+
+
+                    <label>
+                        E-mail *
+                        <input
+                            type="email"
+                            name="email"
+                            required
+                        >
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 01 ENVIRONMENT
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>01</span>
+                    <h3>Environmental Conditions</h3>
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Elevation above sea level
+                        <input
+                            type="text"
+                            name="sea_level"
+                        >
+                    </label>
+
+
+                    <label>
+                        Minimum air temperature °C
+                        <input
+                            type="text"
+                            name="air_temperature_min"
+                        >
+                    </label>
+
+
+                    <label>
+                        Maximum air temperature °C
+                        <input
+                            type="text"
+                            name="air_temperature_max"
+                        >
+                    </label>
+
+
+                    <label>
+                        Estimated operating hours per year
+                        <input
+                            type="text"
+                            name="operating_hours"
+                        >
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Execution</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="execution"
+                            value="stationary"
+                        >
+                        Stationary
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="execution"
+                            value="container"
+                        >
+                        Container
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 02 GRID
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>02</span>
+                    <h3>Operation with the External Grid</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Operating mode</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="grid_operation"
+                            value="parallel"
+                        >
+                        Parallel
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="grid_operation"
+                            value="autonomous"
+                        >
+                        Autonomous
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 03 ELECTRICITY
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>03</span>
+                    <h3>Electricity Consumption</h3>
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Power (kW)
+                        <input
+                            type="text"
+                            name="power_kw"
+                        >
+                    </label>
+
+
+                    <label>
+                        Low voltage (V)
+                        <input
+                            type="text"
+                            name="low_voltage"
+                        >
+                    </label>
+
+
+                    <label>
+                        Medium voltage (V)
+                        <input
+                            type="text"
+                            name="medium_voltage"
+                        >
+                    </label>
+
+
+                    <label>
+                        Summer minimum (kW)
+                        <input
+                            type="text"
+                            name="summer_min"
+                        >
+                    </label>
+
+
+                    <label>
+                        Winter minimum (kW)
+                        <input
+                            type="text"
+                            name="winter_min"
+                        >
+                    </label>
+
+
+                    <label>
+                        Summer maximum (kW)
+                        <input
+                            type="text"
+                            name="summer_max"
+                        >
+                    </label>
+
+
+                    <label>
+                        Winter maximum (kW)
+                        <input
+                            type="text"
+                            name="winter_max"
+                        >
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>
+                        Need to reserve power capacity
+                    </span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="reserve_power"
+                            value="yes"
+                        >
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="reserve_power"
+                            value="no"
+                        >
+                        No
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>
+                        Consumer availability category
+                    </span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="consumer_category_1"
+                            value="yes"
+                        >
+                        Category 1 – Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="consumer_category_1"
+                            value="no"
+                        >
+                        Category 1 – No
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="consumer_category_2"
+                            value="yes"
+                        >
+                        Category 2 – Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="consumer_category_2"
+                            value="no"
+                        >
+                        Category 2 – No
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 04 HEAT
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>04</span>
+                    <h3>Heat Consumption</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Heat demand available?</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="heat_demand"
+                            value="yes"
+                        >
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="heat_demand"
+                            value="no"
+                        >
+                        No
+                    </label>
+
+                </div>
+
+
+                <h4>Hot Water Supply</h4>
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Summer (Gcal/h)
+                        <input
+                            type="text"
+                            name="hot_water_summer"
+                        >
+                    </label>
+
+                    <label>
+                        Winter (Gcal/h)
+                        <input
+                            type="text"
+                            name="hot_water_winter"
+                        >
+                    </label>
+
+                </div>
+
+
+                <h4>Heating</h4>
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Summer (Gcal/h)
+                        <input
+                            type="text"
+                            name="heating_summer"
+                        >
+                    </label>
+
+                    <label>
+                        Winter (Gcal/h)
+                        <input
+                            type="text"
+                            name="heating_winter"
+                        >
+                    </label>
+
+                    <label>
+                        Heating system return temperature (°C)
+                        <input
+                            type="text"
+                            name="heating_return_temp"
+                        >
+                    </label>
+
+                    <label>
+                        Hot water supply temperature (°C)
+                        <input
+                            type="text"
+                            name="hot_water_temp"
+                        >
+                    </label>
+
+                    <label>
+                        Minimum water supply temperature (°C)
+                        <input
+                            type="text"
+                            name="water_min_temp"
+                        >
+                    </label>
+
+                    <label>
+                        Heating system flow temperature (°C)
+                        <input
+                            type="text"
+                            name="heating_flow_temp"
+                        >
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 05 STEAM
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>05</span>
+                    <h3>Steam Supply</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Steam demand</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="steam_required"
+                            value="yes"
+                        >
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="steam_required"
+                            value="no"
+                        >
+                        No
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Summer t/h
+                        <input
+                            type="text"
+                            name="steam_summer_tph"
+                        >
+                    </label>
+
+                    <label>
+                        Summer bar
+                        <input
+                            type="text"
+                            name="steam_summer_bar"
+                        >
+                    </label>
+
+                    <label>
+                        Summer °C
+                        <input
+                            type="text"
+                            name="steam_summer_temp"
+                        >
+                    </label>
+
+                    <label>
+                        Winter t/h
+                        <input
+                            type="text"
+                            name="steam_winter_tph"
+                        >
+                    </label>
+
+                    <label>
+                        Winter bar
+                        <input
+                            type="text"
+                            name="steam_winter_bar"
+                        >
+                    </label>
+
+                    <label>
+                        Winter °C
+                        <input
+                            type="text"
+                            name="steam_winter_temp"
+                        >
+                    </label>
+
+                    <label>
+                        Condensate t/h
+                        <input
+                            type="text"
+                            name="condensate_tph"
+                        >
+                    </label>
+
+                    <label>
+                        Condensate bar
+                        <input
+                            type="text"
+                            name="condensate_bar"
+                        >
+                    </label>
+
+                    <label>
+                        Condensate °C
+                        <input
+                            type="text"
+                            name="condensate_temp"
+                        >
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 06 PROCESS HEATING
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>06</span>
+                    <h3>Heating Supply for Process Purposes</h3>
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Demand (kW)
+                        <input
+                            type="text"
+                            name="process_heat_kw"
+                        >
+                    </label>
+
+                    <label>
+                        Heating medium flow temperature
+                        <input
+                            type="text"
+                            name="process_flow_temp"
+                        >
+                    </label>
+
+                    <label>
+                        Heating medium return temperature
+                        <input
+                            type="text"
+                            name="process_return_temp"
+                        >
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 07 FUEL
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>07</span>
+                    <h3>Fuel Type</h3>
+                </div>
+
+
+                <div class="questionnaire-options questionnaire-options-wrap">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="fuel[]"
+                            value="natural_gas"
+                        >
+                        Natural gas
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="fuel[]"
+                            value="diesel"
+                        >
+                        Diesel
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="fuel[]"
+                            value="associated_gas"
+                        >
+                        Associated gas
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="fuel[]"
+                            value="crude_oil"
+                        >
+                        Crude oil
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="fuel[]"
+                            value="fuel_oil"
+                        >
+                        Fuel oil
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 08 TARIFFS
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>08</span>
+                    <h3>Centralised Tariffs</h3>
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Electricity (EUR/kW/h)
+                        <input
+                            type="text"
+                            name="electricity_tariff"
+                        >
+                    </label>
+
+                    <label>
+                        Heat (EUR/Gcal)
+                        <input
+                            type="text"
+                            name="heat_tariff"
+                        >
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 09 ENERGY CARRIERS
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>09</span>
+                    <h3>Energy Carrier Tariffs</h3>
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        EUR/m³
+                        <input
+                            type="text"
+                            name="fuel_tariff_m3"
+                        >
+                    </label>
+
+                    <label>
+                        EUR/kg
+                        <input
+                            type="text"
+                            name="fuel_tariff_kg"
+                        >
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 10 BUILDING
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>10</span>
+                    <h3>Company Information</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>
+                        Availability of a building for the
+                        cogeneration installation
+                    </span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="building_available"
+                            value="yes"
+                        >
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="building_available"
+                            value="no"
+                        >
+                        No
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Fire safety category
+                        <input
+                            type="text"
+                            name="fire_category"
+                        >
+                    </label>
+
+                    <label>
+                        Wall insulation
+                        <input
+                            type="text"
+                            name="wall_insulation"
+                        >
+                    </label>
+
+                    <label>
+                        Structure
+                        <input
+                            type="text"
+                            name="structure"
+                        >
+                    </label>
+
+                    <label>
+                        Room area (m²)
+                        <input
+                            type="text"
+                            name="room_area"
+                        >
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-options questionnaire-options-wrap">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="building[]"
+                            value="crane"
+                        >
+                        Crane / lifting equipment
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="building[]"
+                            value="ventilation"
+                        >
+                        Ventilation system
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="building[]"
+                            value="lighting"
+                        >
+                        Lighting system
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="building[]"
+                            value="water"
+                        >
+                        Water supply
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="building[]"
+                            value="fire_system"
+                        >
+                        Fire protection system
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="building[]"
+                            value="sewerage"
+                        >
+                        Sewerage system
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="building[]"
+                            value="heating"
+                        >
+                        Heating system
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 11 WATER
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>11</span>
+                    <h3>Water Supply Sources</h3>
+                </div>
+
+
+                <div class="questionnaire-options questionnaire-options-wrap">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="water_source[]"
+                            value="river"
+                        >
+                        River
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="water_source[]"
+                            value="lake"
+                        >
+                        Lake
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="water_source[]"
+                            value="city"
+                        >
+                        Municipal water system
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="water_source[]"
+                            value="well"
+                        >
+                        Artesian well
+                    </label>
+
+                </div>
+
+
+                <label class="questionnaire-full">
+
+                    Water system description
+
+                    <textarea
+                        name="water_description"
+                    ></textarea>
+
+                </label>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 12 ELECTRICAL SWITCHGEAR
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>12</span>
+                    <h3>Electrical Switchgear</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Availability</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="switchgear_available"
+                            value="yes"
+                        >
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="switchgear_available"
+                            value="no"
+                        >
+                        No
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Designation
+                        <input
+                            type="text"
+                            name="switchgear_name"
+                        >
+                    </label>
+
+                    <label>
+                        Type
+                        <input
+                            type="text"
+                            name="switchgear_type"
+                        >
+                    </label>
+
+                    <label>
+                        kW
+                        <input
+                            type="text"
+                            name="switchgear_kw"
+                        >
+                    </label>
+
+                    <label>
+                        Rated current (A)
+                        <input
+                            type="text"
+                            name="current_rating"
+                        >
+                    </label>
+
+                    <label>
+                        Electrical short circuit (A)
+                        <input
+                            type="text"
+                            name="short_circuit"
+                        >
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Backup requirement</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="backup_need"
+                            value="yes"
+                        >
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="backup_need"
+                            value="no"
+                        >
+                        No
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 13 GAS PIPELINE
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>13</span>
+                    <h3>Gas Pipeline</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>
+                        Availability of a connected gas pipeline
+                    </span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gas_pipeline"
+                            value="yes"
+                        >
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gas_pipeline"
+                            value="no"
+                        >
+                        No
+                    </label>
+
+                </div>
+
+
+                <label>
+
+                    Gas pressure (bar)
+
+                    <input
+                        type="text"
+                        name="gas_pressure"
+                    >
+
+                </label>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 14 WATER TREATMENT
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>14</span>
+                    <h3>Chemical Water Treatment</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Availability</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="water_treatment"
+                            value="yes"
+                        >
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="water_treatment"
+                            value="no"
+                        >
+                        No
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Stage 1
+                        <input
+                            type="text"
+                            name="water_stage_1"
+                        >
+                    </label>
+
+                    <label>
+                        Capacity (m³/h)
+                        <input
+                            type="text"
+                            name="water_capacity_1"
+                        >
+                    </label>
+
+                    <label>
+                        Alkalinity (mg/eq/l)
+                        <input
+                            type="text"
+                            name="water_robustness_1"
+                        >
+                    </label>
+
+                    <label>
+                        pH
+                        <input
+                            type="text"
+                            name="water_ph_1"
+                        >
+                    </label>
+
+                    <label>
+                        Stage 2
+                        <input
+                            type="text"
+                            name="water_stage_2"
+                        >
+                    </label>
+
+                    <label>
+                        Capacity (m³/h)
+                        <input
+                            type="text"
+                            name="water_capacity_2"
+                        >
+                    </label>
+
+                    <label>
+                        Alkalinity (mg/eq/l)
+                        <input
+                            type="text"
+                            name="water_robustness_2"
+                        >
+                    </label>
+
+                    <label>
+                        pH
+                        <input
+                            type="text"
+                            name="water_ph_2"
+                        >
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 15 CLEANING
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>15</span>
+                    <h3>Cleaning System</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Availability</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="cleaning_system"
+                            value="yes"
+                        >
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="cleaning_system"
+                            value="no"
+                        >
+                        No
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 16 COOLING
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>16</span>
+                    <h3>Chilled Water Supply</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Demand</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="cooling_required"
+                            value="yes"
+                        >
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="cooling_required"
+                            value="no"
+                        >
+                        No
+                    </label>
+
+                </div>
+
+
+                <label>
+
+                    Capacity (kW)
+
+                    <input
+                        type="text"
+                        name="cooling_power"
+                    >
+
+                </label>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ATTACHMENTS
+            ================================================== -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>+</span>
+                    <h3>Attachments</h3>
+                </div>
+
+
+                <div class="questionnaire-files">
+
+                    <label>
+
+                        Heating water / water supply diagram
+
+                        <input
+                            type="file"
+                            name="heating_graph"
+                            accept=".pdf,.jpg,.jpeg,.png"
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        Fuel composition
+
+                        <input
+                            type="file"
+                            name="fuel_composition"
+                            accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx"
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        Plans / energy supply
+
+                        <input
+                            type="file"
+                            name="project_plans"
+                            accept=".pdf,.jpg,.jpeg,.png,.dwg,.doc,.docx"
+                        >
+
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SUBMIT
+            ================================================== -->
+
+            <div class="questionnaire-submit">
+
+                <button
+                    type="submit"
+                    class="questionnaire-submit-button"
+                >
+                    Send request
+                    <span>↗</span>
+                </button>
+
+                <p>
+                    * Required fields
+                </p>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
 
 </body>
 </html>

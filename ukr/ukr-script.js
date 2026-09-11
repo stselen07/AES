@@ -1468,3 +1468,100 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+
+/* =========================================================
+   AES QUESTIONNAIRE — OPEN / CLOSE
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const questionnaire =
+        document.getElementById("aesQuestionnaire");
+
+    const openButton =
+        document.getElementById("openQuestionnaire");
+
+    const closeButton =
+        document.getElementById("closeQuestionnaire");
+
+
+    if (!questionnaire || !openButton || !closeButton) {
+        return;
+    }
+
+
+    openButton.addEventListener("click", function () {
+
+        questionnaire.classList.add("is-open");
+
+        questionnaire.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.classList.add(
+            "questionnaire-open"
+        );
+
+        questionnaire.scrollTop = 0;
+
+    });
+
+
+    closeButton.addEventListener("click", function () {
+
+        questionnaire.classList.remove("is-open");
+
+        questionnaire.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.classList.remove(
+            "questionnaire-open"
+        );
+
+    });
+
+
+    questionnaire.addEventListener("click", function (event) {
+
+        if (event.target === questionnaire) {
+
+            questionnaire.classList.remove("is-open");
+
+            questionnaire.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.classList.remove(
+                "questionnaire-open"
+            );
+
+        }
+
+    });
+
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key !== "Escape") {
+            return;
+        }
+
+
+        questionnaire.classList.remove("is-open");
+
+        questionnaire.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.classList.remove(
+            "questionnaire-open"
+        );
+
+    });
+
+});

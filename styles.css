@@ -3843,3 +3843,513 @@ body.solution-detail-open {
     }
 
 }
+
+/* =========================================================
+   SOLUTION DETAIL — QUESTIONNAIRE BUTTON
+========================================================= */
+
+.solution-detail-form-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 18px 22px;
+
+    box-sizing: border-box;
+
+    border: 0;
+    border-radius: 2px;
+
+    background: #111b31;
+
+    color: #ffffff;
+
+    font-family: inherit !important;
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.solution-detail-form-button span {
+    font-size: 21px;
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+
+.solution-detail-form-button:hover {
+    background: #b9872b;
+
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   AES QUESTIONNAIRE
+========================================================= */
+
+.aes-questionnaire {
+    position: fixed;
+    inset: 0;
+
+    z-index: 10000;
+
+    background: rgba(17, 27, 49, 0.72);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    overflow-y: auto;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+.aes-questionnaire.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+body.questionnaire-open {
+    overflow: hidden;
+}
+
+
+.aes-questionnaire-inner {
+    position: relative;
+
+    width: min(1180px, calc(100% - 40px));
+
+    margin: 40px auto;
+
+    padding: 60px;
+
+    background: #f5f4f0;
+
+    border-radius: 2px;
+}
+
+
+.aes-questionnaire-close {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    width: 42px;
+    height: 42px;
+
+    border: 0;
+    background: transparent;
+
+    color: #111b31;
+
+    font-family: inherit;
+    font-size: 32px;
+
+    cursor: pointer;
+}
+
+
+.aes-questionnaire-header {
+    max-width: 720px;
+
+    margin-bottom: 65px;
+}
+
+
+.aes-questionnaire-header .eyebrow {
+    margin-bottom: 18px;
+}
+
+
+.aes-questionnaire-header h2 {
+    margin: 0 0 18px;
+
+    color: #111b31;
+
+    font-family: inherit !important;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+
+.aes-questionnaire-header p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: #667085;
+
+    font-family: inherit !important;
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.questionnaire-section {
+    padding: 45px 0;
+
+    border-top: 1px solid rgba(17, 27, 49, 0.14);
+}
+
+
+.questionnaire-section-heading {
+    display: flex;
+    align-items: baseline;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+.questionnaire-section-heading > span {
+    color: #b9872b;
+
+    font-family: inherit !important;
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 0.1em;
+}
+
+
+.questionnaire-section-heading h3 {
+    margin: 0;
+
+    color: #111b31;
+
+    font-family: inherit !important;
+    font-size: 26px;
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   FIELDS
+========================================================= */
+
+.questionnaire-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px 28px;
+}
+
+
+.questionnaire-grid label,
+.questionnaire-section > label {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+
+    color: #667085;
+
+    font-family: inherit !important;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.questionnaire-grid input,
+.questionnaire-section > label input,
+.questionnaire-full textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    border: 1px solid rgba(17, 27, 49, 0.18);
+    border-radius: 1px;
+
+    background: rgba(255,255,255,0.65);
+
+    color: #111b31;
+
+    font-family: inherit !important;
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.questionnaire-grid input:focus,
+.questionnaire-section > label input:focus,
+.questionnaire-full textarea:focus {
+    border-color: #b9872b;
+
+    background: #fff;
+}
+
+
+.questionnaire-full {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin-top: 25px;
+
+    color: #667085;
+
+    font-family: inherit !important;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.questionnaire-full textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   OPTIONS
+========================================================= */
+
+.questionnaire-options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 14px 25px;
+
+    margin-top: 25px;
+}
+
+
+.questionnaire-options > span {
+    width: 100%;
+
+    margin-bottom: 3px;
+
+    color: #667085;
+
+    font-family: inherit !important;
+    font-size: 13px;
+}
+
+
+.questionnaire-options label {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #111b31;
+
+    font-family: inherit !important;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+.questionnaire-options input {
+    accent-color: #b9872b;
+}
+
+
+.questionnaire-options-wrap {
+    align-items: flex-start;
+}
+
+
+/* =========================================================
+   INNER HEADINGS
+========================================================= */
+
+.questionnaire-section h4 {
+    margin: 35px 0 18px;
+
+    color: #111b31;
+
+    font-family: inherit !important;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   FILES
+========================================================= */
+
+.questionnaire-files {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.questionnaire-files label {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding: 22px;
+
+    border: 1px dashed rgba(17, 27, 49, 0.25);
+
+    color: #667085;
+
+    font-family: inherit !important;
+    font-size: 13px;
+}
+
+
+.questionnaire-files input {
+    width: 100%;
+
+    font-family: inherit !important;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.questionnaire-submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding-top: 45px;
+
+    border-top: 1px solid rgba(17, 27, 49, 0.14);
+}
+
+
+.questionnaire-submit-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-width: 280px;
+
+    padding: 18px 22px;
+
+    border: 0;
+
+    background: #111b31;
+
+    color: #fff;
+
+    font-family: inherit !important;
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.questionnaire-submit-button:hover {
+    transform: translateY(-2px);
+
+    background: #b9872b;
+}
+
+
+.questionnaire-submit-button span {
+    font-size: 20px;
+}
+
+
+.questionnaire-submit p {
+    margin: 0;
+
+    color: #667085;
+
+    font-family: inherit !important;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .aes-questionnaire-inner {
+        width: calc(100% - 20px);
+
+        margin: 10px auto;
+
+        padding: 45px 22px;
+    }
+
+
+    .questionnaire-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .questionnaire-files {
+        grid-template-columns: 1fr;
+    }
+
+
+    .questionnaire-submit {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .questionnaire-submit-button {
+        width: 100%;
+    }
+
+}

@@ -865,12 +865,21 @@
 
                 <div class="solution-detail-media">
 
-                    <img
-                        src="../images/KWK-anlage.jpg"
-                        alt="Когенераційна установка AES"
-                    >
+    <img
+        src="../images/KWK-anlage.jpg"
+        alt="AES когенераційна установка"
+    >
 
-                </div>
+    <button
+        class="solution-detail-form-button"
+        type="button"
+        id="openQuestionnaire"
+    >
+        ЗАПОВНИТИ ФОРМУ
+        <span>↗</span>
+    </button>
+
+</div>
 
             </div>
 
@@ -4067,6 +4076,1255 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <script src="ukr-script.js"></script>
+
+<!-- =========================================================
+     AES QUESTIONNAIRE — УКРАЇНСЬКА
+========================================================= -->
+
+<div
+    class="aes-questionnaire"
+    id="aesQuestionnaire"
+    aria-hidden="true"
+>
+
+    <div class="aes-questionnaire-inner">
+
+        <button
+            class="aes-questionnaire-close"
+            type="button"
+            id="closeQuestionnaire"
+            aria-label="Закрити опитувальник"
+        >
+            ×
+        </button>
+
+
+        <div class="aes-questionnaire-header">
+
+            <span class="eyebrow">
+                AES · ЗАПИТ НА ПРОЄКТ
+            </span>
+
+            <h2>
+                Опитувальник
+            </h2>
+
+            <p>
+                Будь ласка, надайте наведену нижче інформацію,
+                щоб ми могли оцінити ваші енергетичні потреби.
+            </p>
+
+        </div>
+
+
+        <form
+            id="aesQuestionnaireForm"
+            action="send-questionnaire.php"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+
+
+            <!-- 00 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>00</span>
+                    <h3>Проєкт та контактні дані</h3>
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Замовник
+                        <input type="text" name="customer">
+                    </label>
+
+
+                    <label>
+                        Назва або номер проєкту
+                        <input type="text" name="project">
+                    </label>
+
+
+                    <label>
+                        Контактна особа *
+                        <input
+                            type="text"
+                            name="contact_person"
+                            required
+                        >
+                    </label>
+
+
+                    <label>
+                        Телефон / факс
+                        <input type="text" name="phone">
+                    </label>
+
+
+                    <label>
+                        E-mail *
+                        <input
+                            type="email"
+                            name="email"
+                            required
+                        >
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 01 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>01</span>
+                    <h3>Умови навколишнього середовища</h3>
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Висота над рівнем моря
+                        <input type="text" name="sea_level">
+                    </label>
+
+
+                    <label>
+                        Мінімальна температура повітря °C
+                        <input type="text" name="air_temperature_min">
+                    </label>
+
+
+                    <label>
+                        Максимальна температура повітря °C
+                        <input type="text" name="air_temperature_max">
+                    </label>
+
+
+                    <label>
+                        Орієнтовна кількість годин роботи на рік
+                        <input type="text" name="operating_hours">
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Виконання</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="execution"
+                            value="stationary"
+                        >
+                        Стаціонарне
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="execution"
+                            value="container"
+                        >
+                        Контейнерне
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 02 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>02</span>
+                    <h3>Робота із зовнішньою мережею</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Режим роботи</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="grid_operation"
+                            value="parallel"
+                        >
+                        Паралельний
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="grid_operation"
+                            value="autonomous"
+                        >
+                        Автономний
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 03 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>03</span>
+                    <h3>Споживання електроенергії</h3>
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Потужність (кВт)
+                        <input type="text" name="power_kw">
+                    </label>
+
+
+                    <label>
+                        Низька напруга (В)
+                        <input type="text" name="low_voltage">
+                    </label>
+
+
+                    <label>
+                        Середня напруга (В)
+                        <input type="text" name="medium_voltage">
+                    </label>
+
+
+                    <label>
+                        Літній мінімум (кВт)
+                        <input type="text" name="summer_min">
+                    </label>
+
+
+                    <label>
+                        Зимовий мінімум (кВт)
+                        <input type="text" name="winter_min">
+                    </label>
+
+
+                    <label>
+                        Літній максимум (кВт)
+                        <input type="text" name="summer_max">
+                    </label>
+
+
+                    <label>
+                        Зимовий максимум (кВт)
+                        <input type="text" name="winter_max">
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>
+                        Необхідність резервування потужності
+                    </span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="reserve_power"
+                            value="yes"
+                        >
+                        Так
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="reserve_power"
+                            value="no"
+                        >
+                        Ні
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>
+                        Категорія надійності споживача
+                    </span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="consumer_category_1"
+                            value="yes"
+                        >
+                        1 категорія — так
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="consumer_category_1"
+                            value="no"
+                        >
+                        1 категорія — ні
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="consumer_category_2"
+                            value="yes"
+                        >
+                        2 категорія — так
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="consumer_category_2"
+                            value="no"
+                        >
+                        2 категорія — ні
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 04 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>04</span>
+                    <h3>Споживання тепла</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Наявність потреби в теплі</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="heat_demand"
+                            value="yes"
+                        >
+                        Так
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="heat_demand"
+                            value="no"
+                        >
+                        Ні
+                    </label>
+
+                </div>
+
+
+                <h4>Гаряче водопостачання</h4>
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Літо (Гкал/год)
+                        <input type="text" name="hot_water_summer">
+                    </label>
+
+                    <label>
+                        Зима (Гкал/год)
+                        <input type="text" name="hot_water_winter">
+                    </label>
+
+                </div>
+
+
+                <h4>Опалення</h4>
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Літо (Гкал/год)
+                        <input type="text" name="heating_summer">
+                    </label>
+
+                    <label>
+                        Зима (Гкал/год)
+                        <input type="text" name="heating_winter">
+                    </label>
+
+                    <label>
+                        Температура зворотної лінії системи опалення (°C)
+                        <input type="text" name="heating_return_temp">
+                    </label>
+
+                    <label>
+                        Температура гарячого водопостачання (°C)
+                        <input type="text" name="hot_water_temp">
+                    </label>
+
+                    <label>
+                        Мінімальна температура водопостачання (°C)
+                        <input type="text" name="water_min_temp">
+                    </label>
+
+                    <label>
+                        Температура подачі системи опалення (°C)
+                        <input type="text" name="heating_flow_temp">
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 05 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>05</span>
+                    <h3>Потреба в парі</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Потреба в парі</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="steam_required"
+                            value="yes"
+                        >
+                        Так
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="steam_required"
+                            value="no"
+                        >
+                        Ні
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Літо т/год
+                        <input type="text" name="steam_summer_tph">
+                    </label>
+
+                    <label>
+                        Літо бар
+                        <input type="text" name="steam_summer_bar">
+                    </label>
+
+                    <label>
+                        Літо °C
+                        <input type="text" name="steam_summer_temp">
+                    </label>
+
+                    <label>
+                        Зима т/год
+                        <input type="text" name="steam_winter_tph">
+                    </label>
+
+                    <label>
+                        Зима бар
+                        <input type="text" name="steam_winter_bar">
+                    </label>
+
+                    <label>
+                        Зима °C
+                        <input type="text" name="steam_winter_temp">
+                    </label>
+
+                    <label>
+                        Конденсат т/год
+                        <input type="text" name="condensate_tph">
+                    </label>
+
+                    <label>
+                        Конденсат бар
+                        <input type="text" name="condensate_bar">
+                    </label>
+
+                    <label>
+                        Конденсат °C
+                        <input type="text" name="condensate_temp">
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 06 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>06</span>
+                    <h3>Теплопостачання для технологічних потреб</h3>
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Потреба (кВт)
+                        <input type="text" name="process_heat_kw">
+                    </label>
+
+                    <label>
+                        Температура подачі теплоносія
+                        <input type="text" name="process_flow_temp">
+                    </label>
+
+                    <label>
+                        Температура зворотного теплоносія
+                        <input type="text" name="process_return_temp">
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 07 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>07</span>
+                    <h3>Тип палива</h3>
+                </div>
+
+
+                <div class="questionnaire-options questionnaire-options-wrap">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="fuel[]"
+                            value="natural_gas"
+                        >
+                        Природний газ
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="fuel[]"
+                            value="diesel"
+                        >
+                        Дизельне паливо
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="fuel[]"
+                            value="associated_gas"
+                        >
+                        Попутний газ
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="fuel[]"
+                            value="crude_oil"
+                        >
+                        Нафта
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="fuel[]"
+                            value="fuel_oil"
+                        >
+                        Мазут
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 08 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>08</span>
+                    <h3>Централізовані тарифи</h3>
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Електроенергія (EUR/кВт/год)
+                        <input
+                            type="text"
+                            name="electricity_tariff"
+                        >
+                    </label>
+
+                    <label>
+                        Тепло (EUR/Гкал)
+                        <input
+                            type="text"
+                            name="heat_tariff"
+                        >
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 09 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>09</span>
+                    <h3>Тарифи на енергоносії</h3>
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        EUR/м³
+                        <input
+                            type="text"
+                            name="fuel_tariff_m3"
+                        >
+                    </label>
+
+                    <label>
+                        EUR/кг
+                        <input
+                            type="text"
+                            name="fuel_tariff_kg"
+                        >
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 10 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>10</span>
+                    <h3>Інформація про об'єкт</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>
+                        Наявність будівлі для когенераційної установки
+                    </span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="building_available"
+                            value="yes"
+                        >
+                        Так
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="building_available"
+                            value="no"
+                        >
+                        Ні
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Категорія пожежної безпеки
+                        <input type="text" name="fire_category">
+                    </label>
+
+                    <label>
+                        Теплоізоляція стін
+                        <input type="text" name="wall_insulation">
+                    </label>
+
+                    <label>
+                        Конструкція
+                        <input type="text" name="structure">
+                    </label>
+
+                    <label>
+                        Площа приміщення (м²)
+                        <input type="text" name="room_area">
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-options questionnaire-options-wrap">
+
+                    <label>
+                        <input type="checkbox" name="building[]" value="crane">
+                        Кран / вантажопідіймальне обладнання
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="building[]" value="ventilation">
+                        Система вентиляції
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="building[]" value="lighting">
+                        Система освітлення
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="building[]" value="water">
+                        Водопостачання
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="building[]" value="fire_system">
+                        Система пожежогасіння
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="building[]" value="sewerage">
+                        Каналізація
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="building[]" value="heating">
+                        Система опалення
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 11 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>11</span>
+                    <h3>Джерела водопостачання</h3>
+                </div>
+
+
+                <div class="questionnaire-options questionnaire-options-wrap">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="water_source[]"
+                            value="river"
+                        >
+                        Річка
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="water_source[]"
+                            value="lake"
+                        >
+                        Озеро
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="water_source[]"
+                            value="city"
+                        >
+                        Міська система водопостачання
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="water_source[]"
+                            value="well"
+                        >
+                        Артезіанська свердловина
+                    </label>
+
+                </div>
+
+
+                <label class="questionnaire-full">
+
+                    Опис системи водопостачання
+
+                    <textarea
+                        name="water_description"
+                    ></textarea>
+
+                </label>
+
+            </section>
+
+
+
+            <!-- 12 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>12</span>
+                    <h3>Електрична розподільча установка</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Наявність</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="switchgear_available"
+                            value="yes"
+                        >
+                        Так
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="switchgear_available"
+                            value="no"
+                        >
+                        Ні
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        Позначення
+                        <input type="text" name="switchgear_name">
+                    </label>
+
+                    <label>
+                        Тип
+                        <input type="text" name="switchgear_type">
+                    </label>
+
+                    <label>
+                        кВт
+                        <input type="text" name="switchgear_kw">
+                    </label>
+
+                    <label>
+                        Номінальний струм (А)
+                        <input type="text" name="current_rating">
+                    </label>
+
+                    <label>
+                        Струм короткого замикання (А)
+                        <input type="text" name="short_circuit">
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Потреба в резервуванні</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="backup_need"
+                            value="yes"
+                        >
+                        Так
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="backup_need"
+                            value="no"
+                        >
+                        Ні
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 13 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>13</span>
+                    <h3>Газопровід</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>
+                        Наявність підключеного газопроводу
+                    </span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gas_pipeline"
+                            value="yes"
+                        >
+                        Так
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gas_pipeline"
+                            value="no"
+                        >
+                        Ні
+                    </label>
+
+                </div>
+
+
+                <label>
+
+                    Тиск газу (бар)
+
+                    <input
+                        type="text"
+                        name="gas_pressure"
+                    >
+
+                </label>
+
+            </section>
+
+
+
+            <!-- 14 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>14</span>
+                    <h3>Хімічна водопідготовка</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Наявність</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="water_treatment"
+                            value="yes"
+                        >
+                        Так
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="water_treatment"
+                            value="no"
+                        >
+                        Ні
+                    </label>
+
+                </div>
+
+
+                <div class="questionnaire-grid">
+
+                    <label>
+                        1-й ступінь
+                        <input type="text" name="water_stage_1">
+                    </label>
+
+                    <label>
+                        Продуктивність (м³/год)
+                        <input type="text" name="water_capacity_1">
+                    </label>
+
+                    <label>
+                        Лужність (мг-екв/л)
+                        <input type="text" name="water_robustness_1">
+                    </label>
+
+                    <label>
+                        pH
+                        <input type="text" name="water_ph_1">
+                    </label>
+
+                    <label>
+                        2-й ступінь
+                        <input type="text" name="water_stage_2">
+                    </label>
+
+                    <label>
+                        Продуктивність (м³/год)
+                        <input type="text" name="water_capacity_2">
+                    </label>
+
+                    <label>
+                        Лужність (мг-екв/л)
+                        <input type="text" name="water_robustness_2">
+                    </label>
+
+                    <label>
+                        pH
+                        <input type="text" name="water_ph_2">
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 15 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>15</span>
+                    <h3>Очисна установка</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Наявність</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="cleaning_system"
+                            value="yes"
+                        >
+                        Так
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="cleaning_system"
+                            value="no"
+                        >
+                        Ні
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- 16 -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>16</span>
+                    <h3>Холодопостачання</h3>
+                </div>
+
+
+                <div class="questionnaire-options">
+
+                    <span>Потреба</span>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="cooling_required"
+                            value="yes"
+                        >
+                        Так
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="cooling_required"
+                            value="no"
+                        >
+                        Ні
+                    </label>
+
+                </div>
+
+
+                <label>
+
+                    Потужність (кВт)
+
+                    <input
+                        type="text"
+                        name="cooling_power"
+                    >
+
+                </label>
+
+            </section>
+
+
+
+            <!-- ATTACHMENTS -->
+
+            <section class="questionnaire-section">
+
+                <div class="questionnaire-section-heading">
+                    <span>+</span>
+                    <h3>Додатки</h3>
+                </div>
+
+
+                <div class="questionnaire-files">
+
+                    <label>
+
+                        Схема теплопостачання / водопостачання
+
+                        <input
+                            type="file"
+                            name="heating_graph"
+                            accept=".pdf,.jpg,.jpeg,.png"
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        Склад палива
+
+                        <input
+                            type="file"
+                            name="fuel_composition"
+                            accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx"
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        Плани / схема енергопостачання
+
+                        <input
+                            type="file"
+                            name="project_plans"
+                            accept=".pdf,.jpg,.jpeg,.png,.dwg,.doc,.docx"
+                        >
+
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SUBMIT -->
+
+            <div class="questionnaire-submit">
+
+                <button
+                    type="submit"
+                    class="questionnaire-submit-button"
+                >
+                    НАДІСЛАТИ ЗАПИТ
+                    <span>↗</span>
+                </button>
+
+                <p>
+                    * Обов'язкові поля
+                </p>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
 
 </body>
 </html>
