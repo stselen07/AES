@@ -1142,3 +1142,150 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+
+
+/* =========================================================
+   SOLUTIONS — OPEN / CLOSE DETAIL PAGES
+========================================================= */
+
+document.addEventListener("click", function (event) {
+
+    const arrow = event.target.closest(".solution-arrow");
+
+    if (!arrow) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+
+    const card = arrow.closest(".solution-card");
+
+    if (!card) return;
+
+
+    let solution = arrow.getAttribute("data-solution");
+
+
+    if (!solution) {
+
+        if (card.classList.contains("solution-power")) {
+            solution = "power";
+        }
+
+        else if (card.classList.contains("solution-chp")) {
+            solution = "chp";
+        }
+
+        else if (card.classList.contains("solution-gas")) {
+            solution = "gas";
+        }
+
+        else if (card.classList.contains("solution-modular")) {
+            solution = "modular";
+        }
+
+        else if (card.classList.contains("solution-grid-support")) {
+            solution = "grid";
+        }
+
+        else if (card.classList.contains("solution-industrial")) {
+            solution = "industrial";
+        }
+
+    }
+
+
+    if (!solution) return;
+
+
+    const detail =
+        document.getElementById("solutionDetails");
+
+    if (!detail) {
+        console.error("solutionDetails NOT FOUND");
+        return;
+    }
+
+
+    const pages =
+        detail.querySelectorAll(".solution-detail-page");
+
+
+    pages.forEach(function (page) {
+        page.classList.remove("is-active");
+    });
+
+
+    const selectedPage =
+        detail.querySelector(
+            '[data-solution-page="' + solution + '"]'
+        );
+
+
+    if (!selectedPage) {
+        console.error(
+            "DETAIL PAGE NOT FOUND:",
+            solution
+        );
+        return;
+    }
+
+
+    selectedPage.classList.add("is-active");
+
+    detail.classList.add("is-open");
+
+    document.body.classList.add("solution-detail-open");
+
+    detail.scrollTop = 0;
+
+});
+
+
+
+/* =========================================================
+   BACK TO SOLUTIONS
+========================================================= */
+
+document.addEventListener("click", function (event) {
+
+    const back =
+        event.target.closest(".solution-detail-back");
+
+    if (!back) return;
+
+
+    const detail =
+        document.getElementById("solutionDetails");
+
+    if (!detail) return;
+
+
+    detail.classList.remove("is-open");
+
+    document.body.classList.remove("solution-detail-open");
+
+});
+
+
+
+/* =========================================================
+   ESC — CLOSE
+========================================================= */
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key !== "Escape") return;
+
+
+    const detail =
+        document.getElementById("solutionDetails");
+
+    if (!detail) return;
+
+
+    detail.classList.remove("is-open");
+
+    document.body.classList.remove("solution-detail-open");
+
+});

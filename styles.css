@@ -2967,3 +2967,879 @@ body.pdf-modal-open {
     }
 
 }
+
+/* =========================================================
+   TECHNOLOGY → TECHNOLOGY PARTNERS
+   FINAL VERSION
+========================================================= */
+
+
+/* REMOVE GAP AFTER TECHNOLOGY */
+
+#technology {
+    padding-bottom: 0 !important;
+}
+
+
+/* =========================================================
+   TECHNOLOGY PARTNERS
+========================================================= */
+
+.technology-partners {
+    position: relative;
+
+    width: 100%;
+    height: 175px;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #101d3b;
+
+    box-sizing: border-box;
+
+    isolation: isolate;
+}
+
+
+/* TOP / BOTTOM GOLD LINES */
+
+.technology-partners::before,
+.technology-partners::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: rgba(198, 154, 58, 0.75);
+
+    z-index: 10;
+}
+
+.technology-partners::before {
+    top: 0;
+}
+
+.technology-partners::after {
+    bottom: 0;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.technology-partners-label {
+    position: relative;
+
+    z-index: 8;
+
+    margin: 0 0 18px 42px;
+
+    padding: 0;
+
+    color: #c69a3a;
+
+    font-size: 12px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: 0.20em;
+
+    text-align: left;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.technology-partners-marquee {
+    position: relative;
+
+    width: 100%;
+    height: 65px;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SIDE FADE
+========================================================= */
+
+.technology-partners-marquee::before,
+.technology-partners-marquee::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    width: 130px;
+
+    z-index: 6;
+
+    pointer-events: none;
+}
+
+.technology-partners-marquee::before {
+    left: 0;
+
+    background: linear-gradient(
+        90deg,
+        #101d3b 0%,
+        rgba(16, 29, 59, 0.92) 35%,
+        rgba(16, 29, 59, 0) 100%
+    );
+}
+
+.technology-partners-marquee::after {
+    right: 0;
+
+    background: linear-gradient(
+        270deg,
+        #101d3b 0%,
+        rgba(16, 29, 59, 0.92) 35%,
+        rgba(16, 29, 59, 0) 100%
+    );
+}
+
+
+/* =========================================================
+   MOVING TRACK
+========================================================= */
+
+.technology-partners-track {
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    flex-wrap: nowrap !important;
+
+    align-items: center !important;
+
+    justify-content: flex-start !important;
+
+    width: max-content !important;
+    max-width: none !important;
+
+    height: 65px;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    gap: 72px;
+
+    animation:
+        technologyPartnersScroll
+        34s
+        linear
+        infinite;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   PARTNER ITEM
+========================================================= */
+
+.technology-partner {
+    flex: 0 0 145px !important;
+
+    width: 145px !important;
+    min-width: 145px !important;
+
+    height: 58px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: transparent !important;
+
+    opacity: 1;
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* =========================================================
+   LOGOS
+========================================================= */
+
+.technology-partner img {
+    display: block !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    max-width: 145px !important;
+    max-height: 54px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: contain;
+
+    opacity: 1 !important;
+
+    filter: none !important;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.technology-partner:hover {
+    transform: scale(1.07);
+}
+
+.technology-partner:hover img {
+    transform: scale(1.04);
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(255, 255, 255, 0.18)
+        ) !important;
+}
+
+
+/* =========================================================
+   INFINITE MOVEMENT
+========================================================= */
+
+@keyframes technologyPartnersScroll {
+
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(
+            calc(-50% - 36px),
+            0,
+            0
+        );
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    #technology {
+        padding-bottom: 0 !important;
+    }
+
+    .technology-partners {
+        height: 145px;
+    }
+
+    .technology-partners-label {
+        margin-left: 24px;
+        margin-bottom: 16px;
+
+        font-size: 10px;
+    }
+
+    .technology-partners-marquee {
+        height: 55px;
+    }
+
+    .technology-partners-track {
+        height: 55px;
+
+        gap: 48px;
+
+        animation-duration: 27s;
+    }
+
+    .technology-partner {
+        flex-basis: 115px !important;
+
+        width: 115px !important;
+        min-width: 115px !important;
+
+        height: 50px !important;
+    }
+
+    .technology-partner img {
+        max-width: 115px !important;
+        max-height: 46px !important;
+    }
+
+    .technology-partners-marquee::before,
+    .technology-partners-marquee::after {
+        width: 65px;
+    }
+}
+
+/* =========================================================
+   SOLUTION DETAIL PAGES
+========================================================= */
+
+.solution-detail {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    width: 100%;
+    height: 100vh;
+
+    background: #f5f6f8;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease,
+        visibility 0.45s ease;
+}
+
+
+.solution-detail.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+
+body.solution-detail-open {
+    overflow: hidden;
+}
+
+
+
+/* =========================================================
+   DETAIL PAGE
+========================================================= */
+
+.solution-detail-page {
+    display: none;
+
+    width: 100%;
+    min-height: 100%;
+}
+
+
+.solution-detail-page.is-active {
+    display: block;
+}
+
+
+.solution-detail-inner {
+    width: min(1400px, calc(100% - 80px));
+    margin: 0 auto;
+
+    padding: 40px 0 100px;
+}
+
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.solution-detail-back {
+    display: inline-flex;
+    align-items: center;
+
+    margin: 0 0 60px;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    color: inherit;
+
+    font-family: inherit !important;
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.solution-detail-back:hover {
+    opacity: 0.65;
+    transform: translateX(-4px);
+}
+
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.solution-detail-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.solution-detail-hero-content {
+    min-width: 0;
+}
+
+
+.solution-detail-page .eyebrow {
+    display: block;
+
+    margin-bottom: 24px;
+
+    font-family: inherit !important;
+    font-size: 13px;
+    font-weight: 500;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+
+.solution-detail-page h2 {
+    max-width: 680px;
+
+    margin: 0 0 24px;
+
+    color: #111b31;
+
+    font-family: inherit !important;
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 500;
+
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+}
+
+
+.solution-detail-page h2 span {
+    display: block;
+}
+
+
+.solution-detail-intro {
+    max-width: 600px;
+
+    margin: 0;
+
+    font-family: inherit !important;
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+
+
+/* =========================================================
+   HERO MEDIA
+========================================================= */
+
+.solution-detail-media {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 2px;
+}
+
+
+.solution-detail-media img,
+.solution-detail-media video {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+
+.solution-detail-media:has(img),
+.solution-detail-media:has(video) {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+}
+
+
+
+/* =========================================================
+   VIDEO CONTROL
+========================================================= */
+
+.solution-video-control {
+    position: absolute;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.45);
+    border-radius: 50%;
+
+    background: rgba(17,27,49,0.65);
+
+    color: #fff;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.solution-video-control:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* =========================================================
+   FACTS
+========================================================= */
+
+.solution-detail-facts {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 34px;
+
+    margin-top: 42px;
+}
+
+
+.solution-detail-fact {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.solution-detail-fact strong {
+    font-family: inherit !important;
+    font-size: 28px;
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    color: #111b31;
+}
+
+
+.solution-detail-fact span {
+    font-family: inherit !important;
+    font-size: 13px;
+    line-height: 1.4;
+
+    opacity: 0.65;
+}
+
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.solution-detail-body {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 80px;
+
+    margin-top: 100px;
+    padding-top: 70px;
+
+    border-top: 1px solid rgba(17,27,49,0.14);
+}
+
+
+.solution-detail-body-column {
+    min-width: 0;
+}
+
+
+.solution-detail-body .section-label {
+    display: block;
+
+    margin-bottom: 22px;
+
+    font-family: inherit !important;
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    opacity: 0.6;
+}
+
+
+.solution-detail-body h3 {
+    max-width: 600px;
+
+    margin: 0 0 24px;
+
+    font-family: inherit !important;
+    font-size: clamp(26px, 2.4vw, 38px);
+    font-weight: 500;
+
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+
+    color: #111b31;
+}
+
+
+.solution-detail-body p {
+    max-width: 620px;
+
+    margin: 0 0 20px;
+
+    font-family: inherit !important;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+
+.solution-detail-body p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+/* =========================================================
+   LIST
+========================================================= */
+
+.solution-detail-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.solution-detail-list li {
+    position: relative;
+
+    padding-left: 22px;
+
+    font-family: inherit !important;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+.solution-detail-list li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0.65em;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+}
+
+
+
+/* =========================================================
+   INDUSTRIAL EFFICIENCY
+========================================================= */
+
+.solution-industrial-efficiency {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-top: 34px;
+    padding-top: 28px;
+
+    border-top: 1px solid rgba(17,27,49,0.14);
+}
+
+
+.solution-industrial-efficiency strong {
+    font-family: inherit !important;
+    font-size: 52px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    color: #111b31;
+}
+
+
+.solution-industrial-efficiency span {
+    font-family: inherit !important;
+    font-size: 14px;
+
+    opacity: 0.65;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .solution-detail-inner {
+        width: min(100% - 50px, 900px);
+
+        padding-top: 30px;
+        padding-bottom: 70px;
+    }
+
+
+    .solution-detail-hero {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .solution-detail-body {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+        margin-top: 70px;
+        padding-top: 50px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .solution-detail-inner {
+        width: calc(100% - 32px);
+
+        padding-top: 22px;
+        padding-bottom: 50px;
+    }
+
+
+    .solution-detail-back {
+        margin-bottom: 40px;
+    }
+
+
+    .solution-detail-page h2 {
+        font-size: 38px !important;
+    }
+
+
+    .solution-detail-intro {
+        font-size: 16px;
+    }
+
+
+    .solution-detail-facts {
+        gap: 24px;
+
+        margin-top: 30px;
+    }
+
+
+    .solution-detail-fact strong {
+        font-size: 23px;
+    }
+
+
+    .solution-detail-body {
+        margin-top: 55px;
+        padding-top: 40px;
+    }
+
+
+    .solution-detail-body h3 {
+        font-size: 28px;
+    }
+
+
+    .solution-industrial-efficiency strong {
+        font-size: 44px;
+    }
+
+}

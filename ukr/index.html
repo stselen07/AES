@@ -226,7 +226,7 @@
 
 
 <!-- =========================================================
-     WHAT WE SOLVE
+     SOLUTIONS
 ========================================================= -->
 
 <section
@@ -245,18 +245,22 @@
             <h2>
                 Енергетичні рішення
                 <span>
-                    під ваші потреби.
+                    відповідно до ваших потреб.
                 </span>
             </h2>
 
             <p class="section-text">
-                Енергетичні рішення, адаптовані
-                до вимог конкретного об'єкта,
-                режиму роботи та доступного палива.
+                Енергетичні рішення, адаптовані до вимог
+                конкретного об'єкта, режиму роботи
+                та доступного палива.
             </p>
 
         </div>
 
+
+        <!-- =====================================================
+             SOLUTION CARDS
+        ====================================================== -->
 
         <div class="solution-grid">
 
@@ -276,44 +280,50 @@
                     </h3>
 
                     <p>
-                        Генерація електроенергії
-                        на базі газових
-                        поршневих двигунів.
+                        Надійна генерація електроенергії
+                        на базі газових поршневих двигунів.
                     </p>
 
                 </div>
 
+
                 <div class="solution-visual power-visual">
 
-    <div class="power-grid">
+                    <div class="power-grid">
 
-        <span class="power-line power-line-1"></span>
-        <span class="power-line power-line-2"></span>
-        <span class="power-line power-line-3"></span>
+                        <span class="power-line power-line-1"></span>
+                        <span class="power-line power-line-2"></span>
+                        <span class="power-line power-line-3"></span>
 
-        <span class="power-node power-node-1"></span>
-        <span class="power-node power-node-2"></span>
-        <span class="power-node power-node-3"></span>
+                        <span class="power-node power-node-1"></span>
+                        <span class="power-node power-node-2"></span>
+                        <span class="power-node power-node-3"></span>
 
-    </div>
+                    </div>
 
-    <div class="power-engine">
 
-        <span class="engine-ring"></span>
+                    <div class="power-engine">
 
-        <span class="engine-core"></span>
+                        <span class="engine-ring"></span>
+                        <span class="engine-core"></span>
+                        <span class="engine-pulse"></span>
 
-        <span class="engine-pulse"></span>
+                    </div>
 
-    </div>
+                </div>
 
-</div>
 
-                <span class="solution-arrow">
+                <button
+                    class="solution-arrow"
+                    type="button"
+                    data-solution="power"
+                    aria-label="Детальніше про електрогенерацію"
+                >
                     ↗
-                </span>
+                </button>
 
             </article>
+
 
 
             <!-- 02 CHP -->
@@ -327,48 +337,58 @@
                 <div class="solution-content">
 
                     <h3>
-                        Когенерація та тригенерація
+                        Когенерація та
+                        тригенерація
                     </h3>
 
                     <p>
-                        Одночасне виробництво електроенергії
-                         та тепла; у режимі тригенерації — також холоду.
+                        Одночасне виробництво
+                        електроенергії та тепла; у
+                        режимі тригенерації — також холоду.
                     </p>
 
                 </div>
 
+
                 <div class="solution-visual chp-visual">
 
-    <div class="chp-system">
+                    <div class="chp-system">
 
-        <div class="chp-engine">
-            <span></span>
-        </div>
+                        <div class="chp-engine">
+                            <span></span>
+                        </div>
 
-        <div class="chp-flow chp-flow-electric">
-            <i></i>
-            <strong>POWER</strong>
-        </div>
+                        <div class="chp-flow chp-flow-electric">
+                            <i></i>
+                            <strong>POWER</strong>
+                        </div>
 
-        <div class="chp-flow chp-flow-heat">
-            <i></i>
-            <strong>HEAT</strong>
-        </div>
+                        <div class="chp-flow chp-flow-heat">
+                            <i></i>
+                            <strong>HEAT</strong>
+                        </div>
 
-        <div class="chp-flow chp-flow-cooling">
-            <i></i>
-            <strong>COOLING</strong>
-        </div>
+                        <div class="chp-flow chp-flow-cooling">
+                            <i></i>
+                            <strong>COOLING</strong>
+                        </div>
 
-    </div>
+                    </div>
 
-</div>
+                </div>
 
-                <span class="solution-arrow">
+
+                <button
+                    class="solution-arrow"
+                    type="button"
+                    data-solution="chp"
+                    aria-label="Детальніше про когенерацію та тригенерацію"
+                >
                     ↗
-                </span>
+                </button>
 
             </article>
+
 
 
             <!-- 03 GAS -->
@@ -382,16 +402,18 @@
                 <div class="solution-content">
 
                     <h3>
-                        Газові та паливні рішення
+                        Газові та паливні
+                        рішення
                     </h3>
 
                     <p>
-                        Рішення для природного, 
-                        попутного, біогазу та спеціальних 
-                        газів, а також інших видів палива.
+                        Рішення для природного,
+                        попутного, біогазу та
+                        спеціальних газів.
                     </p>
 
                 </div>
+
 
                 <div class="solution-visual gas-visual">
 
@@ -403,11 +425,18 @@
 
                 </div>
 
-                <span class="solution-arrow">
+
+                <button
+                    class="solution-arrow"
+                    type="button"
+                    data-solution="gas"
+                    aria-label="Детальніше про газові та паливні рішення"
+                >
                     ↗
-                </span>
+                </button>
 
             </article>
+
 
 
             <!-- 04 MODULAR -->
@@ -427,27 +456,37 @@
 
                     <p>
                         Модульні та контейнерні
-                        енергетичні рішення
-                        для швидкого розгортання.
+                        енергетичні рішення для
+                        швидкого розгортання.
                     </p>
 
                 </div>
 
+
                 <div class="solution-visual modular-visual">
 
                     <div class="modular-box">
+
                         <span></span>
                         <span></span>
                         <span></span>
+
                     </div>
 
                 </div>
 
-                <span class="solution-arrow">
+
+                <button
+                    class="solution-arrow"
+                    type="button"
+                    data-solution="modular"
+                    aria-label="Детальніше про модульні та контейнерні електростанції"
+                >
                     ↗
-                </span>
+                </button>
 
             </article>
+
 
 
             <!-- 05 GRID -->
@@ -467,11 +506,12 @@
 
                     <p>
                         Базове навантаження,
-                        підтримка мережі,
-                        піковий та гібридний режими.
+                        підтримка мережі, пікові
+                        навантаження та резервне живлення.
                     </p>
 
                 </div>
+
 
                 <div class="solution-visual grid-visual">
 
@@ -483,11 +523,18 @@
 
                 </div>
 
-                <span class="solution-arrow">
+
+                <button
+                    class="solution-arrow"
+                    type="button"
+                    data-solution="grid"
+                    aria-label="Детальніше про підтримку мережі та резервне живлення"
+                >
                     ↗
-                </span>
+                </button>
 
             </article>
+
 
 
             <!-- 06 INDUSTRIAL -->
@@ -506,27 +553,36 @@
                     </h3>
 
                     <p>
-                        Енергетичні системи
-                        для промислових та
-                        комерційних об'єктів.
+                        Енергетичні системи для
+                        промислових та комерційних
+                        об'єктів.
                     </p>
 
                 </div>
 
+
                 <div class="solution-visual industrial-visual">
 
                     <div class="industrial-bars">
+
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
+
                     </div>
 
                 </div>
 
-                <span class="solution-arrow">
+
+                <button
+                    class="solution-arrow"
+                    type="button"
+                    data-solution="industrial"
+                    aria-label="Детальніше про промислові енергетичні рішення"
+                >
                     ↗
-                </span>
+                </button>
 
             </article>
 
@@ -536,6 +592,998 @@
     </div>
 
 </section>
+
+<!-- =========================================================
+     SOLUTION DETAIL PAGES
+========================================================= -->
+
+<div
+    class="solution-detail"
+    id="solutionDetails"
+>
+
+    <!-- =====================================================
+         01 — POWER GENERATION
+    ====================================================== -->
+
+    <article
+        class="solution-detail-page"
+        data-solution-page="power"
+    >
+
+        <div class="solution-detail-inner">
+
+            <button
+                class="solution-detail-back"
+                type="button"
+            >
+                ← Назад до Solutions
+            </button>
+
+
+            <div class="solution-detail-hero">
+
+                <div class="solution-detail-hero-content">
+
+                    <span class="eyebrow">
+                        01 · ЕЛЕКТРОГЕНЕРАЦІЯ
+                    </span>
+
+
+                    <h2>
+                        Електрогенерація
+                        <span>
+                            на базі газових двигунів.
+                        </span>
+                    </h2>
+
+
+                    <p class="solution-detail-intro">
+                        Надійне виробництво електроенергії
+                        на базі газових двигунів — для ефективного,
+                        гнучкого та безперервного енергопостачання.
+                    </p>
+
+
+                    <div class="solution-detail-facts">
+
+                        <div class="solution-detail-fact">
+
+                            <strong>
+                                50 кВт – 12 МВт
+                            </strong>
+
+                            <span>
+                                Потужність одного агрегату
+                            </span>
+
+                        </div>
+
+
+                        <div class="solution-detail-fact">
+
+                            <strong>
+                                До 50 %
+                            </strong>
+
+                            <span>
+                                Електричний ККД
+                            </span>
+
+                        </div>
+
+
+                        <div class="solution-detail-fact">
+
+                            <strong>
+                                3 хв
+                            </strong>
+
+                            <span>
+                                До повного навантаження
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="solution-detail-media">
+
+                    <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    >
+
+                        <source
+                            src="../video/01_GAS_PISTON.mp4"
+                            type="video/mp4"
+                        >
+
+                    </video>
+
+
+                    <button
+                        class="solution-video-control"
+                        type="button"
+                        aria-label="Керування відео"
+                    >
+                        Ⅱ
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-detail-body">
+
+                <div class="solution-detail-body-column">
+
+                    <span class="section-label">
+                        ТЕХНОЛОГІЯ
+                    </span>
+
+
+                    <h3>
+                        Гнучка електрогенерація
+                        для різних енергетичних потреб.
+                    </h3>
+
+
+                    <p>
+                        AES реалізує рішення з виробництва
+                        електроенергії на базі потужних газових
+                        двигунів. Системи можуть застосовуватися
+                        для безперервного виробництва електроенергії
+                        та гнучких режимів роботи.
+                    </p>
+
+
+                    <p>
+                        Газопоршневі двигуни працюють за принципом
+                        Отто або Міллера та забезпечують ефективне
+                        використання різних газоподібних палив.
+                    </p>
+
+                </div>
+
+
+                <div class="solution-detail-body-column">
+
+                    <span class="section-label">
+                        ПАЛИВО
+                    </span>
+
+
+                    <h3>
+                        Для різних видів газу.
+                    </h3>
+
+
+                    <div class="solution-fuel-list">
+
+                        <span>Природний газ</span>
+                        <span>Попутний газ</span>
+                        <span>Біогаз</span>
+                        <span>Звалищний газ</span>
+                        <span>Біогаз очисних споруд</span>
+                        <span>Спеціальні гази</span>
+
+                    </div>
+
+
+                    <p>
+                        Залежно від вимог проєкту можуть
+                        використовуватися різні газоподібні
+                        види палива з відповідною підготовкою.
+                    </p>
+
+
+                    <div class="solution-detail-efficiency">
+
+                        <strong>
+                            95 %
+                        </strong>
+
+                        <span>
+                            Загальний ККД у когенераційних системах
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-detail-bottom">
+
+                <span>
+                    AUSTRO ENERGY SYSTEMS
+                </span>
+
+                <span>
+                    GAS ENGINE TECHNOLOGY
+                </span>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =====================================================
+         02 — CHP & TRIGENERATION
+    ====================================================== -->
+
+    <article
+        class="solution-detail-page"
+        data-solution-page="chp"
+    >
+
+        <div class="solution-detail-inner">
+
+            <button
+                class="solution-detail-back"
+                type="button"
+            >
+                ← Назад до Solutions
+            </button>
+
+
+            <div class="solution-detail-hero">
+
+                <div class="solution-detail-hero-content">
+
+                    <span class="eyebrow">
+                        02 · КОГЕНЕРАЦІЯ ТА ТРИГЕНЕРАЦІЯ
+                    </span>
+
+
+                    <h2>
+                        Тепло та електроенергія
+                        <span>
+                            з когенерації.
+                        </span>
+                    </h2>
+
+
+                    <p class="solution-detail-intro">
+                        Одночасне виробництво електроенергії,
+                        корисного тепла та холоду.
+                    </p>
+
+                </div>
+
+
+                <div class="solution-detail-media">
+
+                    <img
+                        src="../images/KWK-anlage.jpg"
+                        alt="Когенераційна установка AES"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-detail-body">
+
+                <div class="solution-detail-body-column">
+
+                    <span class="section-label">
+                        КОГЕНЕРАЦІЯ
+                    </span>
+
+
+                    <h3>
+                        Максимальне використання
+                        виробленої енергії.
+                    </h3>
+
+
+                    <p>
+                        Когенераційні системи AES одночасно
+                        виробляють електроенергію та корисне
+                        тепло, забезпечуючи ефективне
+                        використання енергетичних ресурсів.
+                    </p>
+
+
+                    <p>
+                        Залежно від вимог проєкту тепло може
+                        використовуватися у формі гарячої води,
+                        пари або холоду.
+                    </p>
+
+                </div>
+
+
+                <div class="solution-detail-body-column">
+
+                    <span class="section-label">
+                        СИСТЕМИ
+                    </span>
+
+
+                    <h3>
+                        Модульне та контейнерне виконання.
+                    </h3>
+
+
+                    <p>
+                        Когенераційні установки можуть
+                        виготовлятися у модульному та
+                        контейнерному виконанні.
+                    </p>
+
+
+                    <div class="solution-fuel-list">
+
+                        <span>50 кВт – 9,5 МВт</span>
+                        <span>Електроенергія</span>
+                        <span>Гаряча вода</span>
+                        <span>Пара</span>
+                        <span>Холод</span>
+                        <span>Центральне керування</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-detail-bottom">
+
+                <span>
+                    AUSTRO ENERGY SYSTEMS
+                </span>
+
+                <span>
+                    CHP &amp; TRIGENERATION
+                </span>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =====================================================
+         03 — GAS & FUEL SOLUTIONS
+    ====================================================== -->
+
+    <article
+        class="solution-detail-page"
+        data-solution-page="gas"
+    >
+
+        <div class="solution-detail-inner">
+
+            <button
+                class="solution-detail-back"
+                type="button"
+            >
+                ← Назад до Solutions
+            </button>
+
+
+            <div class="solution-detail-hero">
+
+                <div class="solution-detail-hero-content">
+
+                    <span class="eyebrow">
+                        03 · ГАЗОВІ ТА ПАЛИВНІ РІШЕННЯ
+                    </span>
+
+
+                    <h2>
+                        Очищення газу
+                        <span>
+                            та системи підготовки.
+                        </span>
+                    </h2>
+
+
+                    <p class="solution-detail-intro">
+                        Системи підготовки природного, попутного,
+                        факельного та інших спеціальних газів
+                        для подальшого використання в газових двигунах.
+                    </p>
+
+                </div>
+
+
+                <div class="solution-detail-media">
+
+                    <img
+                        src="../images/Gas-reinigungs.jpg"
+                        alt="Система очищення та підготовки газу AES"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-detail-body">
+
+                <div class="solution-detail-body-column">
+
+                    <span class="section-label">
+                        ГАЗООЧИЩЕННЯ
+                    </span>
+
+
+                    <h3>
+                        Підготовка газу
+                        до використання в установці.
+                    </h3>
+
+
+                    <p>
+                        AES пропонує системи очищення та підготовки
+                        газу для випадків, коли газ не може бути
+                        безпосередньо використаний у газопоршневих
+                        установках.
+                    </p>
+
+
+                    <p>
+                        Системи очищають газ від сірководню та
+                        важких вуглеводнів і змінюють його властивості
+                        у напрямку природного газу.
+                    </p>
+
+                </div>
+
+
+                <div class="solution-detail-body-column">
+
+                    <span class="section-label">
+                        AES CONTAINER BLOCK
+                    </span>
+
+
+                    <h3>
+                        Компактна контейнерна система.
+                    </h3>
+
+
+                    <div class="solution-fuel-list">
+
+                        <span>Попутний газ</span>
+                        <span>Факельний газ</span>
+                        <span>Сірководень</span>
+                        <span>Важкі вуглеводні</span>
+                        <span>Метанове число до 100 ± 5 %</span>
+                        <span>До 5 500 Нм³/год</span>
+
+                    </div>
+
+
+                    <p>
+                        Модульне виконання дозволяє інтегрувати
+                        систему підготовки газу відповідно
+                        до вимог конкретного проєкту.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-detail-bottom">
+
+                <span>
+                    AUSTRO ENERGY SYSTEMS
+                </span>
+
+                <span>
+                    GAS &amp; FUEL SOLUTIONS
+                </span>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =====================================================
+         04 — MODULAR
+    ====================================================== -->
+
+    <article
+        class="solution-detail-page"
+        data-solution-page="modular"
+    >
+
+        <div class="solution-detail-inner">
+
+            <button
+                class="solution-detail-back"
+                type="button"
+            >
+                ← Назад до Solutions
+            </button>
+
+
+            <div class="solution-detail-hero">
+
+                <div class="solution-detail-hero-content">
+
+                    <span class="eyebrow">
+                        04 · МОДУЛЬНІ СИСТЕМИ
+                    </span>
+
+
+                    <h2>
+                        Модульні та контейнерні
+                        <span>
+                            електростанції.
+                        </span>
+                    </h2>
+
+
+                    <p class="solution-detail-intro">
+                        Модульні енергетичні рішення для швидкого
+                        розгортання, компактного встановлення
+                        та подальшого розширення потужності.
+                    </p>
+
+                </div>
+
+
+                <div class="solution-detail-media">
+
+                    <img
+                        src="../images/technology-modular.jpg"
+                        alt="Модульна контейнерна електростанція AES"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-detail-body">
+
+                <div class="solution-detail-body-column">
+
+                    <span class="section-label">
+                        ТЕХНОЛОГІЯ
+                    </span>
+
+
+                    <h3>
+                        Попередньо виготовлені модулі
+                        для гнучкої реалізації.
+                    </h3>
+
+
+                    <p>
+                        Блок-модульні електростанції AES
+                        формуються з попередньо виготовлених
+                        контейнерних блоків, у яких інтегроване
+                        необхідне обладнання.
+                    </p>
+
+
+                    <p>
+                        Модульна конструкція дозволяє розгортати
+                        установки на обмежених майданчиках
+                        та розширювати потужність шляхом
+                        додавання додаткових модулів.
+                    </p>
+
+                </div>
+
+
+                <div class="solution-detail-body-column">
+
+                    <span class="section-label">
+                        ПЕРЕВАГИ
+                    </span>
+
+
+                    <h3>
+                        Компактно. Швидко. Масштабовано.
+                    </h3>
+
+
+                    <div class="solution-fuel-list">
+
+                        <span>Попередньо виготовлені блоки</span>
+                        <span>Скорочені строки реалізації</span>
+                        <span>Компактна конструкція</span>
+                        <span>Швидкий монтаж і демонтаж</span>
+                        <span>Гнучке розширення потужності</span>
+                        <span>Контейнерне виконання</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-detail-bottom">
+
+                <span>
+                    AUSTRO ENERGY SYSTEMS
+                </span>
+
+                <span>
+                    MODULAR SYSTEMS
+                </span>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =====================================================
+         05 — GRID SUPPORT
+    ====================================================== -->
+
+    <article
+        class="solution-detail-page"
+        data-solution-page="grid"
+    >
+
+        <div class="solution-detail-inner">
+
+            <button
+                class="solution-detail-back"
+                type="button"
+            >
+                ← Назад до Solutions
+            </button>
+
+
+            <div class="solution-detail-hero">
+
+                <div class="solution-detail-hero-content">
+
+                    <span class="eyebrow">
+                        05 · ПІДТРИМКА МЕРЕЖІ
+                    </span>
+
+
+                    <h2>
+                        Підтримка мережі
+                        <span>
+                            та резервне живлення.
+                        </span>
+                    </h2>
+
+
+                    <p class="solution-detail-intro">
+                        Гнучке електропостачання для базового
+                        навантаження, підтримки мережі,
+                        пікових режимів та швидкого резервування.
+                    </p>
+
+                </div>
+
+
+                <div class="solution-detail-media">
+
+                    <img
+                        src="../images/AES-grid-support.jpg"
+                        alt="Електростанція AES для підтримки мережі"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-detail-body">
+
+                <div class="solution-detail-body-column">
+
+                    <span class="section-label">
+                        ТЕХНОЛОГІЯ
+                    </span>
+
+
+                    <h3>
+                        Гнучка потужність
+                        для різних режимів роботи.
+                    </h3>
+
+
+                    <p>
+                        Газові електростанції AES можуть
+                        використовуватися для безперервного
+                        електропостачання, підтримки мережі,
+                        пікових та гібридних режимів роботи.
+                    </p>
+
+
+                    <p>
+                        Завдяки швидкому регулюванню потужності
+                        газових двигунів установки можуть
+                        протягом кількох хвилин вийти
+                        на повне навантаження.
+                    </p>
+
+                </div>
+
+
+                <div class="solution-detail-body-column">
+
+                    <span class="section-label">
+                        РЕЖИМИ РОБОТИ
+                    </span>
+
+
+                    <h3>
+                        Базове навантаження.
+                        Підтримка. Пік. Резерв.
+                    </h3>
+
+
+                    <div class="solution-fuel-list">
+
+                        <span>Базове навантаження</span>
+                        <span>Підтримка мережі</span>
+                        <span>Пікове навантаження</span>
+                        <span>Резервна потужність</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-grid-response">
+
+                <div class="solution-grid-number">
+
+                    <strong>
+                        3
+                    </strong>
+
+                    <span>
+                        ХВ
+                    </span>
+
+                </div>
+
+
+                <div class="solution-grid-response-text">
+
+                    <span class="section-label">
+                        ШВИДКА РЕАКЦІЯ
+                    </span>
+
+
+                    <h3>
+                        Потужність тоді,
+                        коли вона потрібна.
+                    </h3>
+
+
+                    <p>
+                        AES установки можуть швидко
+                        збільшувати потужність відповідно
+                        до змін вимог електричної мережі.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-detail-bottom">
+
+                <span>
+                    AUSTRO ENERGY SYSTEMS
+                </span>
+
+                <span>
+                    GRID SUPPORT &amp; BACKUP
+                </span>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =====================================================
+         06 — INDUSTRIAL
+    ====================================================== -->
+
+    <article
+        class="solution-detail-page"
+        data-solution-page="industrial"
+    >
+
+        <div class="solution-detail-inner">
+
+            <button
+                class="solution-detail-back"
+                type="button"
+            >
+                ← Назад до Solutions
+            </button>
+
+
+            <div class="solution-detail-hero">
+
+                <div class="solution-detail-hero-content">
+
+                    <span class="eyebrow">
+                        06 · ПРОМИСЛОВІ ЕНЕРГЕТИЧНІ РІШЕННЯ
+                    </span>
+
+
+                    <h2>
+                        Промислові
+                        <span>
+                            енергетичні рішення.
+                        </span>
+                    </h2>
+
+
+                    <p class="solution-detail-intro">
+                        Енергетичні системи для промислових
+                        та комерційних об'єктів.
+                    </p>
+
+                </div>
+
+
+                <div class="solution-detail-media">
+
+                    <img
+                        src="../images/06_INDUSTRIAL.jpg"
+                        alt="Промислова енергетична система AES"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-detail-body">
+
+                <div class="solution-detail-body-column">
+
+                    <span class="section-label">
+                        ТЕХНОЛОГІЯ
+                    </span>
+
+
+                    <h3>
+                        Енергопостачання
+                        для промислових об'єктів.
+                    </h3>
+
+
+                    <p>
+                        Енергетичні та когенераційні системи AES
+                        можуть застосовуватися там, де існує
+                        постійна потреба в електроенергії,
+                        теплі або холоді.
+                    </p>
+
+
+                    <p>
+                        Системи можуть бути адаптовані
+                        до вимог конкретного промислового
+                        або комерційного об'єкта.
+                    </p>
+
+                </div>
+
+
+                <div class="solution-detail-body-column">
+
+                    <span class="section-label">
+                        ЗАСТОСУВАННЯ
+                    </span>
+
+
+                    <h3>
+                        Енергія там,
+                        де вона потрібна.
+                    </h3>
+
+
+                    <div class="solution-fuel-list">
+
+                        <span>Промисловість</span>
+                        <span>Комерційні об'єкти</span>
+                        <span>Електроенергія</span>
+                        <span>Тепло</span>
+                        <span>Холод</span>
+                        <span>Когенерація</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-industrial-efficiency">
+
+                <div class="solution-industrial-efficiency-number">
+
+                    <strong>
+                        &gt;95
+                    </strong>
+
+                    <span>
+                        %
+                    </span>
+
+                </div>
+
+
+                <div class="solution-industrial-efficiency-text">
+
+                    <span class="section-label">
+                        ЕФЕКТИВНІСТЬ
+                    </span>
+
+
+                    <h3>
+                        Максимальне використання
+                        енергії.
+                    </h3>
+
+
+                    <p>
+                        У когенераційних системах
+                        загальний ККД може перевищувати 95 %.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="solution-detail-bottom">
+
+                <span>
+                    AUSTRO ENERGY SYSTEMS
+                </span>
+
+                <span>
+                    INDUSTRIAL ENERGY SOLUTIONS
+                </span>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</div>
 
 <!-- =========================================================
      ENERGY POTENTIAL
@@ -2144,15 +3192,16 @@
 
         <div class="section-action">
 
-            <a
-                href="#projects"
-                class="button secondary"
-            >
-                Explore all projects
-                <span>↗</span>
-            </a>
+    <button
+        class="button secondary projects-pdf-button"
+        type="button"
+        id="openProjectsPdf"
+    >
+        Переглянути всі проєкти
+        <span>↗</span>
+    </button>
 
-        </div>
+</div>
 
     </div>
 
@@ -2315,6 +3364,126 @@
 
 </section>
 
+<!-- =========================================================
+     ТЕХНОЛОГІЧНІ ПАРТНЕРИ
+========================================================= -->
+
+<section class="technology-partners">
+
+    <div class="technology-partners-label">
+        ТЕХНОЛОГІЧНІ ПАРТНЕРИ
+    </div>
+
+    <div class="technology-partners-marquee">
+
+        <div class="technology-partners-track">
+
+            <div class="technology-partner">
+                <img
+                    src="../images/Siemens-logo.webp"
+                    alt="Siemens"
+                >
+            </div>
+
+            <div class="technology-partner">
+                <img
+                    src="../images/wartsila-logo.jpg"
+                    alt="Wärtsilä"
+                >
+            </div>
+
+            <div class="technology-partner">
+                <img
+                    src="../images/bosch-logo.webp"
+                    alt="Bosch"
+                >
+            </div>
+
+            <div class="technology-partner">
+                <img
+                    src="../images/bergen-logo.png"
+                    alt="Bergen Engines"
+                >
+            </div>
+
+            <div class="technology-partner">
+                <img
+                    src="../images/MWM-logo.svg.webp"
+                    alt="MWM"
+                >
+            </div>
+
+            <div class="technology-partner">
+                <img
+                    src="../images/MAN-logo.png"
+                    alt="MAN"
+                >
+            </div>
+
+            <div class="technology-partner">
+                <img
+                    src="../images/jenbacher-logo.png"
+                    alt="Jenbacher"
+                >
+            </div>
+
+
+            <!-- DUPLICATE FOR SEAMLESS LOOP -->
+
+            <div class="technology-partner">
+                <img
+                    src="../images/Siemens-logo.webp"
+                    alt="Siemens"
+                >
+            </div>
+
+            <div class="technology-partner">
+                <img
+                    src="../images/wartsila-logo.jpg"
+                    alt="Wärtsilä"
+                >
+            </div>
+
+            <div class="technology-partner">
+                <img
+                    src="../images/bosch-logo.webp"
+                    alt="Bosch"
+                >
+            </div>
+
+            <div class="technology-partner">
+                <img
+                    src="../images/bergen-logo.png"
+                    alt="Bergen Engines"
+                >
+            </div>
+
+            <div class="technology-partner">
+                <img
+                    src="../images/MWM-logo.svg.webp"
+                    alt="MWM"
+                >
+            </div>
+
+            <div class="technology-partner">
+                <img
+                    src="../images/MAN-logo.png"
+                    alt="MAN"
+                >
+            </div>
+
+            <div class="technology-partner">
+                <img
+                    src="../images/jenbacher-logo.png"
+                    alt="Jenbacher"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- =========================================================
@@ -2762,6 +3931,38 @@
 </section>
 
 </main>
+<!-- =========================================================
+     PROJECTS PDF MODAL
+========================================================= -->
+
+<div
+    class="pdf-modal"
+    id="projectsPdfModal"
+    aria-hidden="true"
+>
+
+    <div class="pdf-modal-overlay"></div>
+
+    <div class="pdf-modal-window">
+
+        <button
+            class="pdf-modal-close"
+            type="button"
+            id="closeProjectsPdf"
+            aria-label="Закрити PDF"
+        >
+            ×
+        </button>
+
+        <iframe
+            class="pdf-modal-frame"
+            src="../images/Project-list-AES.pdf"
+            title="Список проєктів AES"
+        ></iframe>
+
+    </div>
+
+</div>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 

@@ -2834,7 +2834,7 @@ section[id] {
             rgba(255,255,255,0.025)
         );
 
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(11,22,48,0.12);
 
     box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.05);
@@ -3421,7 +3421,7 @@ section[id] {
             rgba(255,255,255,0.025)
         );
 
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(11,22,48,0.12);
 
     box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.05);
@@ -6871,7 +6871,8 @@ section[id] {
 /* TECHNOLOGY — COMPACT IMAGE SELECTOR */
 
 .technology {
-    padding-block: clamp(72px, 7vw, 104px);
+    padding-top: 55px !important;
+    padding-bottom: 0 !important;
 }
 
 .technology .section-heading {
@@ -7955,20 +7956,23 @@ section[id] {
     position: fixed;
     inset: 0;
     z-index: 9999;
+
     background: #f5f4ef;
+
     overflow-y: auto;
 
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 
-    transform: translateY(30px);
+    transform: translateY(24px);
 
     transition:
         opacity 0.35s ease,
-        transform 0.45s ease,
-        visibility 0s linear 0.45s;
+        transform 0.4s ease,
+        visibility 0s linear 0.4s;
 }
+
 
 .solution-detail.is-open {
     opacity: 1;
@@ -7979,15 +7983,20 @@ section[id] {
 
     transition:
         opacity 0.35s ease,
-        transform 0.45s ease,
+        transform 0.4s ease,
         visibility 0s linear 0s;
 }
 
 
 .solution-detail-page {
     display: none;
+
     min-height: 100vh;
-    padding: 140px 7vw 100px;
+
+    padding:
+        42px
+        6vw
+        70px;
 }
 
 
@@ -7997,71 +8006,974 @@ section[id] {
 
 
 .solution-detail-inner {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1280px;
+
     margin: 0 auto;
 }
 
 
+/* ---------------------------------------------------------
+   BACK BUTTON
+--------------------------------------------------------- */
+
 .solution-detail-back {
-    display: inline-flex;
+    display: inline-flex !important;
+
     align-items: center;
     gap: 10px;
 
-    margin-bottom: 90px;
-
+    margin: 0 0 55px;
     padding: 0;
 
     border: 0;
-    background: none;
+    background: transparent;
 
-    font-family: inherit;
-    font-size: 15px;
-    font-weight: 600;
+    color: rgba(17, 27, 49, 0.55);
 
-    color: #12213f;
+    font-family:
+
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 1;
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
 
     cursor: pointer;
 
     transition:
-        opacity 0.2s ease,
-        transform 0.2s ease;
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 
 .solution-detail-back:hover {
-    opacity: 0.65;
-    transform: translateX(-4px);
+    color: #111b31;
+
+    transform: translateX(-5px);
+}
+
+
+/* ---------------------------------------------------------
+   HERO
+--------------------------------------------------------- */
+
+.solution-detail-hero {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(420px, 0.72fr);
+
+    gap: 7vw;
+
+    align-items: center;
+
+    min-height: 620px;
+}
+
+
+.solution-detail-hero-content {
+    max-width: 720px;
 }
 
 
 .solution-detail-page .eyebrow {
     display: block;
-    margin-bottom: 25px;
+
+    margin-bottom: 24px;
+
+    color: #b48632 !important;
+
+    font-family: inherit !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.18em !important;
+
+    text-transform: uppercase;
 }
 
 
 .solution-detail-page h2 {
-    max-width: 950px;
-    margin: 0 0 35px;
+    max-width: 680px;
 
-    font-size: clamp(52px, 7vw, 110px);
-    line-height: 0.95;
+    margin: 0 0 24px;
+
+    color: #111b31 !important;
+
+    font-family: inherit !important;
+
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            58px
+        ) !important;
+
+    font-weight: 500 !important;
+
+    line-height: 1.02 !important;
+
+    letter-spacing: -0.035em !important;
 }
 
 
 .solution-detail-page h2 span {
     display: block;
-    color: #bc8a28;
+
+    margin-top: 5px;
+
+    color: #b48632 !important;
 }
 
 
 .solution-detail-intro {
-    max-width: 650px;
+    max-width: 590px;
 
     margin: 0;
 
-    font-size: 22px;
-    line-height: 1.55;
+    color: rgba(17, 27, 49, 0.63) !important;
 
-    color: #5f6b80;
+    font-family: inherit !important;
+
+    font-size: 17px !important;
+    font-weight: 400 !important;
+
+    line-height: 1.7 !important;
+}
+
+
+/* ---------------------------------------------------------
+   FACTS
+--------------------------------------------------------- */
+
+.solution-detail-facts {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 28px;
+
+    max-width: 680px;
+
+    margin-top: 55px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(17, 27, 49, 0.15);
+}
+
+
+.solution-detail-fact {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.solution-detail-fact strong {
+    color: #111b31;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 21px;
+    font-weight: 600;
+
+    line-height: 1.1;
+}
+
+
+.solution-detail-fact span {
+    color: rgba(17, 27, 49, 0.5);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   HERO VIDEO
+--------------------------------------------------------- */
+
+.solution-detail-media {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #dfe1df;
+
+    box-shadow:
+        0 24px 60px
+        rgba(17, 27, 49, 0.14);
+}
+
+
+.solution-detail-media::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(17,27,49,0.08),
+            transparent 35%,
+            rgba(17,27,49,0.28)
+        );
+}
+
+
+.solution-detail-media video {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.solution-detail-media-label {
+    position: absolute;
+
+    left: 22px;
+    bottom: 20px;
+
+    z-index: 3;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   BODY
+--------------------------------------------------------- */
+
+.solution-detail-body {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(320px, 0.7fr);
+
+    gap: 9vw;
+
+    margin-top: 80px;
+
+    padding-top: 55px;
+
+    border-top:
+        1px solid
+        rgba(17, 27, 49, 0.14);
+}
+
+
+.solution-detail-body-column {
+    max-width: 650px;
+}
+
+
+.solution-detail-body .section-label {
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: #b48632;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+
+.solution-detail-body h3 {
+    max-width: 600px;
+
+    margin: 0 0 25px;
+
+    color: #111b31;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: clamp(32px, 3.2vw, 48px);
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.035em;
+}
+
+
+.solution-detail-body p {
+    max-width: 600px;
+
+    margin: 0 0 18px;
+
+    color: rgba(17, 27, 49, 0.62);
+
+    font-size: 15px;
+
+    line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   FUEL LIST
+--------------------------------------------------------- */
+
+.solution-fuel-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    border-top:
+        1px solid
+        rgba(17, 27, 49, 0.12);
+
+    border-left:
+        1px solid
+        rgba(17, 27, 49, 0.12);
+}
+
+
+.solution-fuel-list span {
+    padding: 15px 16px;
+
+    border-right:
+        1px solid
+        rgba(17, 27, 49, 0.12);
+
+    border-bottom:
+        1px solid
+        rgba(17, 27, 49, 0.12);
+
+    color: #111b31;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ---------------------------------------------------------
+   EFFICIENCY
+--------------------------------------------------------- */
+
+.solution-detail-efficiency {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 18px;
+
+    margin-top: 45px;
+
+    padding-top: 28px;
+
+    border-top:
+        1px solid
+        rgba(17, 27, 49, 0.12);
+}
+
+
+.solution-detail-efficiency strong {
+    color: #b48632;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 46px;
+    font-weight: 500;
+
+    line-height: 0.9;
+}
+
+
+.solution-detail-efficiency span {
+    max-width: 130px;
+
+    color: rgba(17, 27, 49, 0.55);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   BOTTOM LINE
+--------------------------------------------------------- */
+
+.solution-detail-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-top: 80px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(17, 27, 49, 0.10);
+
+    color: rgba(17, 27, 49, 0.4);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .solution-detail-page {
+        padding:
+            30px
+            25px
+            60px;
+    }
+
+
+    .solution-detail-back {
+        margin-bottom: 45px;
+    }
+
+
+    .solution-detail-hero {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        min-height: auto;
+    }
+
+
+    .solution-detail-media {
+        max-width: 620px;
+
+        aspect-ratio: 16 / 10;
+    }
+
+
+    .solution-detail-body {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .solution-detail-page {
+        padding:
+            25px
+            20px
+            50px;
+    }
+
+
+    .solution-detail-back {
+        margin-bottom: 38px;
+
+        font-size: 9px;
+    }
+
+
+    .solution-detail-page h2 {
+        font-size:
+            clamp(
+                44px,
+                13vw,
+                64px
+            ) !important;
+
+        line-height: 0.95 !important;
+    }
+
+
+    .solution-detail-intro {
+        font-size: 15px !important;
+    }
+
+
+    .solution-detail-facts {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        margin-top: 40px;
+    }
+
+
+    .solution-detail-media {
+        aspect-ratio: 16 / 10;
+    }
+
+
+    .solution-detail-body {
+        margin-top: 55px;
+
+        padding-top: 40px;
+    }
+
+
+    .solution-detail-body h3 {
+        font-size: 32px;
+    }
+
+
+    .solution-fuel-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .solution-detail-bottom {
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-top: 55px;
+    }
+
+}
+
+/* =========================================================
+   SOLUTIONS — BOTTOM SPACING FIX
+========================================================= */
+
+.solutions {
+    padding-bottom: 90px !important;
+}
+
+.solution-grid {
+    margin-bottom: 0 !important;
+}
+
+/* =========================================================
+   SOLUTIONS — FINAL SPACING
+========================================================= */
+
+#solutions {
+    padding-bottom: 110px !important;
+}
+
+#solutions .solution-grid {
+    margin-bottom: 0 !important;
+}
+
+/* =========================================================
+   FINAL SOLUTIONS SPACING
+========================================================= */
+
+#solutions {
+    padding-bottom: 110px !important;
+}
+
+#solutions .solution-grid {
+    margin-bottom: 0 !important;
+}
+
+#solutions + .solution-detail {
+    margin-top: 0 !important;
+}
+
+#energy-potential {
+    margin-top: 0 !important;
+}
+
+/* =====================================================
+   SOLUTION 02 — KWK & TRIGENERATION
+===================================================== */
+
+.solution-detail-page[data-solution-page="chp"] .solution-detail-media {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+}
+
+.solution-detail-page[data-solution-page="chp"] .solution-detail-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.solution-detail-page[data-solution-page="chp"] .solution-detail-form-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 18px 22px;
+
+    background: #101d3b;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    transition: opacity 0.25s ease;
+}
+
+.solution-detail-page[data-solution-page="chp"] .solution-detail-form-button span {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.solution-detail-page[data-solution-page="chp"] .solution-detail-form-button:hover {
+    opacity: 0.85;
+}
+
+/* =====================================================
+   SOLUTIONS — NATURAL IMAGE SIZE
+   Applies only to solution detail pages with images
+===================================================== */
+
+.solution-detail-media:has(img) {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    overflow: visible;
+}
+
+.solution-detail-media:has(img) img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* =====================================================
+   SOLUTION 05 — GRID SUPPORT & BACKUP
+===================================================== */
+
+.solution-grid-media {
+    position: relative;
+}
+
+.solution-grid-media img {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ENERGY FLOW */
+
+.grid-energy-flow {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.grid-energy-flow span {
+    position: absolute;
+    left: -20%;
+    width: 140%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0.9;
+    box-shadow:
+        0 0 6px rgba(255, 255, 255, 0.9),
+        0 0 14px rgba(255, 255, 255, 0.55);
+    animation: gridFlow 3s linear infinite;
+}
+
+.grid-energy-flow span:nth-child(1) {
+    top: 38%;
+}
+
+.grid-energy-flow span:nth-child(2) {
+    top: 52%;
+    animation-delay: 1.2s;
+}
+
+.grid-energy-flow span:nth-child(3) {
+    top: 66%;
+    animation-delay: 2.4s;
+}
+
+@keyframes gridFlow {
+    from {
+        transform: translateX(-15%);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(15%);
+        opacity: 0;
+    }
+}
+
+
+/* OPERATING MODES */
+
+.solution-grid-modes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.solution-grid-mode {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 68px;
+    padding: 14px 16px;
+    border: 1px solid rgba(17, 27, 49, 0.12);
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.solution-grid-mode strong {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.45;
+}
+
+.solution-grid-mode span {
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+.solution-grid-mode:hover {
+    transform: translateY(-3px);
+    background: rgba(17, 27, 49, 0.04);
+    border-color: rgba(17, 27, 49, 0.28);
+}
+
+
+/* FAST RESPONSE */
+
+.solution-grid-response {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 90px;
+    padding: 55px 0;
+    border-top: 1px solid rgba(17, 27, 49, 0.12);
+    border-bottom: 1px solid rgba(17, 27, 49, 0.12);
+}
+
+.solution-grid-number {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.solution-grid-number strong {
+    font-size: clamp(72px, 9vw, 120px);
+    font-weight: 500;
+    line-height: 0.8;
+    letter-spacing: -0.06em;
+}
+
+.solution-grid-number span {
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    opacity: 0.55;
+}
+
+.solution-grid-response h3 {
+    margin: 8px 0 12px;
+}
+
+
+/* =====================================================
+   SOLUTION 06 — INDUSTRIAL ENERGY SOLUTIONS
+===================================================== */
+
+.solution-industrial-applications {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.solution-industrial-application {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 68px;
+    padding: 16px 18px;
+    border: 1px solid rgba(17, 27, 49, 0.14);
+    background: rgba(17, 27, 49, 0.025);
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.solution-industrial-application strong {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.45;
+}
+
+.solution-industrial-application span {
+    font-size: 15px;
+}
+
+.solution-industrial-application:hover {
+    transform: translateX(5px);
+    background: rgba(17, 27, 49, 0.07);
+    border-color: rgba(17, 27, 49, 0.3);
+}
+
+
+/* EFFICIENCY */
+
+.solution-industrial-efficiency {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 70px;
+    align-items: center;
+    margin-top: 90px;
+    padding: 60px 0;
+    border-top: 1px solid rgba(17, 27, 49, 0.14);
+    border-bottom: 1px solid rgba(17, 27, 49, 0.14);
+}
+
+.solution-industrial-efficiency-number {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.solution-industrial-efficiency-number strong {
+    font-size: clamp(90px, 11vw, 150px);
+    font-weight: 500;
+    line-height: 0.75;
+    letter-spacing: -0.07em;
+}
+
+.solution-industrial-efficiency-number span {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.solution-industrial-efficiency-text {
+    max-width: 620px;
+}
+
+.solution-industrial-efficiency-text h3 {
+    margin: 8px 0 12px;
+}
+
+.solution-industrial-efficiency-text p {
+    max-width: 560px;
+}
+
+
+@media (max-width: 700px) {
+
+    .solution-industrial-efficiency {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        margin-top: 60px;
+    }
+
+    .solution-industrial-efficiency-number strong {
+        font-size: 90px;
+    }
+
 }

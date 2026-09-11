@@ -1189,3 +1189,282 @@ console.log("PROJECT CARDS:", projectCards.length);
     }
 
 });
+
+/* =========================================================
+   PROJECTS PDF MODAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const openButton =
+        document.getElementById("openProjectsPdf");
+
+    const modal =
+        document.getElementById("projectsPdfModal");
+
+    const closeButton =
+        document.getElementById("closeProjectsPdf");
+
+    const overlay =
+        modal
+            ? modal.querySelector(".pdf-modal-overlay")
+            : null;
+
+
+    if (
+        !openButton ||
+        !modal ||
+        !closeButton ||
+        !overlay
+    ) {
+        return;
+    }
+
+
+    openButton.addEventListener(
+        "click",
+        function () {
+
+            modal.classList.add("is-open");
+
+            modal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.classList.add(
+                "pdf-modal-open"
+            );
+
+        }
+    );
+
+
+    function closePdfModal() {
+
+        modal.classList.remove("is-open");
+
+        modal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.classList.remove(
+            "pdf-modal-open"
+        );
+
+    }
+
+
+    closeButton.addEventListener(
+        "click",
+        closePdfModal
+    );
+
+
+    overlay.addEventListener(
+        "click",
+        closePdfModal
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                modal.classList.contains("is-open")
+            ) {
+
+                closePdfModal();
+
+            }
+
+        }
+    );
+
+});
+
+/* =========================================================
+   SOLUTIONS — OPEN / CLOSE DETAIL PAGES
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const detail =
+        document.getElementById("solutionDetails");
+
+    const solutionCards =
+        document.querySelectorAll(".solution-card");
+
+
+    if (!detail || !solutionCards.length) {
+        return;
+    }
+
+
+    /* =====================================================
+       OPEN SOLUTION
+    ===================================================== */
+
+    solutionCards.forEach(function (card) {
+
+        card.addEventListener("click", function (event) {
+
+            const arrow =
+                card.querySelector(".solution-arrow");
+
+            let solution =
+                arrow
+                    ? arrow.getAttribute("data-solution")
+                    : null;
+
+
+            if (!solution) {
+
+                if (card.classList.contains("solution-power")) {
+                    solution = "power";
+                }
+
+                else if (card.classList.contains("solution-chp")) {
+                    solution = "chp";
+                }
+
+                else if (card.classList.contains("solution-gas")) {
+                    solution = "gas";
+                }
+
+                else if (card.classList.contains("solution-modular")) {
+                    solution = "modular";
+                }
+
+                else if (card.classList.contains("solution-grid-support")) {
+                    solution = "grid";
+                }
+
+                else if (card.classList.contains("solution-industrial")) {
+                    solution = "industrial";
+                }
+
+            }
+
+
+            if (!solution) {
+                return;
+            }
+
+
+            const page =
+                detail.querySelector(
+                    '[data-solution-page="' +
+                    solution +
+                    '"]'
+                );
+
+
+            if (!page) {
+
+                console.error(
+                    "DETAIL PAGE NOT FOUND:",
+                    solution
+                );
+
+                return;
+
+            }
+
+
+            detail
+                .querySelectorAll(
+                    ".solution-detail-page"
+                )
+                .forEach(function (item) {
+
+                    item.classList.remove(
+                        "is-active"
+                    );
+
+                });
+
+
+            page.classList.add(
+                "is-active"
+            );
+
+
+            detail.classList.add(
+                "is-open"
+            );
+
+
+            document.body.classList.add(
+                "solution-detail-open"
+            );
+
+
+            detail.scrollTop = 0;
+
+        });
+
+    });
+
+
+    /* =====================================================
+       BACK
+    ===================================================== */
+
+    detail.addEventListener(
+        "click",
+        function (event) {
+
+            const back =
+                event.target.closest(
+                    ".solution-detail-back"
+                );
+
+
+            if (!back) {
+                return;
+            }
+
+
+            detail.classList.remove(
+                "is-open"
+            );
+
+
+            document.body.classList.remove(
+                "solution-detail-open"
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       ESC
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key !== "Escape") {
+                return;
+            }
+
+
+            detail.classList.remove(
+                "is-open"
+            );
+
+
+            document.body.classList.remove(
+                "solution-detail-open"
+            );
+
+        }
+    );
+
+});
