@@ -3899,6 +3899,27 @@ body.solution-detail-open {
 }
 
 /* =========================================================
+   TECHNOLOGY DETAILS
+   Uses the same detail-page design as SOLUTIONS
+========================================================= */
+
+#technologyDetails {
+    display: none;
+}
+
+#technologyDetails.is-open {
+    display: block;
+}
+
+#technologyDetails .solution-detail-page {
+    display: none;
+}
+
+#technologyDetails .solution-detail-page.is-active {
+    display: block;
+}
+
+/* =========================================================
    AES QUESTIONNAIRE
 ========================================================= */
 
@@ -4353,3 +4374,250 @@ body.questionnaire-open {
     }
 
 }
+
+/* =========================================================
+   TECHNOLOGY DETAILS — uses the same detail system as SOLUTIONS
+========================================================= */
+
+#technologyDetails {
+    display: none;
+}
+
+#technologyDetails.is-open {
+    display: block;
+}
+
+/* =========================================================
+   TECHNOLOGY DETAILS — COMPACT LAYOUT
+========================================================= */
+
+#technologyDetails .solution-detail-page {
+    padding-top: 45px;
+    padding-bottom: 35px;
+}
+
+#technologyDetails .solution-detail-inner {
+    max-width: 1380px;
+    margin: 0 auto;
+}
+
+
+/* BACK */
+
+#technologyDetails .solution-detail-back {
+    margin-bottom: 32px;
+}
+
+
+/* HERO */
+
+#technologyDetails .solution-detail-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 390px);
+    gap: 50px;
+    align-items: center;
+}
+
+
+/* TEXT */
+
+#technologyDetails .solution-detail-hero-content {
+    max-width: 620px;
+}
+
+
+/* SMALLER HEADING */
+
+#technologyDetails .solution-detail-hero h2 {
+    max-width: 600px;
+    margin: 0 0 22px;
+
+    font-family: inherit !important;
+    font-size: clamp(38px, 3.4vw, 52px) !important;
+    font-weight: 500 !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.035em !important;
+}
+
+
+/* INTRO */
+
+#technologyDetails .solution-detail-intro {
+    max-width: 570px;
+    margin: 0;
+    font-family: inherit !important;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+
+/* SMALLER IMAGE */
+
+#technologyDetails .solution-detail-media {
+    width: 100%;
+    max-width: 390px;
+    margin-left: auto;
+}
+
+#technologyDetails .solution-detail-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+
+/* FACTS */
+
+#technologyDetails .solution-detail-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 28px;
+}
+
+#technologyDetails .solution-detail-fact {
+    padding-top: 16px;
+    border-top: 1px solid rgba(17, 27, 49, 0.18);
+}
+
+#technologyDetails .solution-detail-fact strong {
+    display: block;
+    margin-bottom: 7px;
+
+    color: #111b31;
+    font-family: inherit !important;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+#technologyDetails .solution-detail-fact span {
+    display: block;
+
+    color: #6f7580;
+    font-family: inherit !important;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+
+/* BODY */
+
+#technologyDetails .solution-detail-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+
+    margin-top: 75px;
+    padding-top: 55px;
+
+    border-top: 1px solid rgba(17, 27, 49, 0.16);
+}
+
+#technologyDetails .solution-detail-body-column {
+    max-width: 600px;
+}
+
+#technologyDetails .solution-detail-body h3 {
+    max-width: 520px;
+    margin: 0 0 20px;
+
+    font-family: inherit !important;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+#technologyDetails .solution-detail-body h3 span {
+    color: #b9872b;
+}
+
+#technologyDetails .solution-detail-body p {
+    max-width: 570px;
+    margin-bottom: 16px;
+
+    font-family: inherit !important;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+
+/* LIST */
+
+#technologyDetails .solution-fuel-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#technologyDetails .solution-fuel-list li {
+    padding: 13px 0;
+
+    border-bottom: 1px solid rgba(17, 27, 49, 0.14);
+
+    font-family: inherit !important;
+    font-size: 15px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    #technologyDetails .solution-detail-page {
+        padding-top: 80px;
+    }
+
+    #technologyDetails .solution-detail-hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    #technologyDetails .solution-detail-media {
+        max-width: 520px;
+        margin: 0;
+    }
+
+    #technologyDetails .solution-detail-body {
+        grid-template-columns: 1fr;
+        gap: 55px;
+        margin-top: 60px;
+    }
+
+    #technologyDetails .solution-detail-facts {
+        gap: 18px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    #technologyDetails .solution-detail-page {
+        padding: 70px 20px 40px;
+    }
+
+    #technologyDetails .solution-detail-back {
+        margin-bottom: 40px;
+    }
+
+    #technologyDetails .solution-detail-hero h2 {
+        font-size: 42px !important;
+    }
+
+    #technologyDetails .solution-detail-facts {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+#technologyDetails .solution-detail-media iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+}
+

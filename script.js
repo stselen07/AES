@@ -1386,3 +1386,256 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+/* =========================================================
+   TECHNOLOGY DETAILS
+========================================================= */
+
+document.addEventListener("click", function (event) {
+
+    const technologyOption = event.target.closest(
+        ".technology-option[data-technology-detail]"
+    );
+
+    if (!technologyOption) {
+        return;
+    }
+
+
+    const technology =
+        technologyOption.getAttribute(
+            "data-technology-detail"
+        );
+
+
+    const technologyDetails =
+        document.getElementById(
+            "technologyDetails"
+        );
+
+
+    if (!technologyDetails) {
+        return;
+    }
+
+
+    const page =
+        technologyDetails.querySelector(
+            '[data-technology-page="' +
+            technology +
+            '"]'
+        );
+
+
+    if (!page) {
+        return;
+    }
+
+
+    technologyDetails
+        .querySelectorAll(
+            ".solution-detail-page"
+        )
+        .forEach(function (item) {
+
+            item.classList.remove(
+                "is-active"
+            );
+
+        });
+
+
+    page.classList.add(
+        "is-active"
+    );
+
+
+    technologyDetails.classList.add(
+        "is-open"
+    );
+
+
+    document.body.classList.add(
+        "solution-detail-open"
+    );
+
+
+    technologyDetails.scrollTop = 0;
+
+});
+
+
+/* =========================================================
+   TECHNOLOGY DETAILS — BACK
+========================================================= */
+
+document.addEventListener("click", function (event) {
+
+    const back =
+        event.target.closest(
+            "#technologyDetails .solution-detail-back"
+        );
+
+
+    if (!back) {
+        return;
+    }
+
+
+    const technologyDetails =
+        document.getElementById(
+            "technologyDetails"
+        );
+
+
+    if (!technologyDetails) {
+        return;
+    }
+
+
+    technologyDetails.classList.remove(
+        "is-open"
+    );
+
+
+    document.body.classList.remove(
+        "solution-detail-open"
+    );
+
+});
+
+
+/* =========================================================
+   TECHNOLOGY DETAILS — ESC
+========================================================= */
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key !== "Escape") {
+        return;
+    }
+
+
+    const technologyDetails =
+        document.getElementById(
+            "technologyDetails"
+        );
+
+
+    if (!technologyDetails) {
+        return;
+    }
+
+
+    technologyDetails.classList.remove(
+        "is-open"
+    );
+
+
+    document.body.classList.remove(
+        "solution-detail-open"
+    );
+
+});
+
+/* =========================================================
+   TECHNOLOGY DETAIL PAGES
+   Shared system for Technology 01–06
+========================================================= */
+
+document.addEventListener("click", function (event) {
+
+    const technologyOption = event.target.closest(
+        ".technology-option[data-technology-detail]"
+    );
+
+    if (!technologyOption) {
+        return;
+    }
+
+    const technology = technologyOption.getAttribute(
+        "data-technology-detail"
+    );
+
+    const technologyDetails = document.getElementById(
+        "technologyDetails"
+    );
+
+    if (!technologyDetails || !technology) {
+        return;
+    }
+
+    const selectedPage = technologyDetails.querySelector(
+        '[data-technology-page="' + technology + '"]'
+    );
+
+    if (!selectedPage) {
+        return;
+    }
+
+    technologyDetails
+        .querySelectorAll(".solution-detail-page")
+        .forEach(function (page) {
+            page.classList.remove("is-active");
+        });
+
+    selectedPage.classList.add("is-active");
+
+    technologyDetails.classList.add("is-open");
+
+    document.body.classList.add("solution-detail-open");
+
+    technologyDetails.scrollTop = 0;
+});
+
+
+/* =========================================================
+   TECHNOLOGY DETAIL — BACK
+========================================================= */
+
+document.addEventListener("click", function (event) {
+
+    const backButton = event.target.closest(
+        "#technologyDetails .solution-detail-back"
+    );
+
+    if (!backButton) {
+        return;
+    }
+
+    const technologyDetails = document.getElementById(
+        "technologyDetails"
+    );
+
+    if (!technologyDetails) {
+        return;
+    }
+
+    technologyDetails.classList.remove("is-open");
+
+    document.body.classList.remove("solution-detail-open");
+});
+
+
+/* =========================================================
+   TECHNOLOGY DETAIL — ESC
+========================================================= */
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key !== "Escape") {
+        return;
+    }
+
+    const technologyDetails = document.getElementById(
+        "technologyDetails"
+    );
+
+    if (!technologyDetails) {
+        return;
+    }
+
+    technologyDetails.classList.remove("is-open");
+
+    document.body.classList.remove("solution-detail-open");
+});
